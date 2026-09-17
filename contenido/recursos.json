@@ -1,0 +1,142 @@
+[
+  {
+    "id": "rec-1",
+    "semanaId": "s1",
+    "titulo": "¿Qué es la Inteligencia Artificial y qué NO es?",
+    "tipo": "lectura",
+    "url": "https://gemini.google.com/share/93280f9e37b4",
+    "descripcion": "Conceptos fundamentales para comprender los alcances reales y las limitaciones de los LLMs sin mitos.",
+    "fuente": "UCR / CIOdD - Guía Abierta",
+    "moduloId": "m1"
+  },
+  {
+    "id": "rec-2",
+    "semanaId": "s1",
+    "titulo": "Protocolo y Ley 8968 de Protección de Datos en Costa Rica",
+    "tipo": "documento",
+    "url": "politicas/protocolo-privacidad-datos.html",
+    "descripcion": "Normas éticas y legales para el tratamiento seguro de datos en herramientas de IA dentro de Costa Rica.",
+    "fuente": "CIOdD / UCR",
+    "moduloId": "m1"
+  },
+  {
+    "id": "rec-3",
+    "semanaId": "s2",
+    "titulo": "Guía Maestra de Prompt Engineering: Modelo CIFRCE",
+    "tipo": "infografia",
+    "url": "Infografias/Semana 2. Guía Maestra de Prompt Engineering.png",
+    "descripcion": "Infografía oficial descargable en alta resolución con la anatomía de un prompt profesional.",
+    "fuente": "UCR / CIOdD",
+    "moduloId": "m1"
+  },
+  {
+    "id": "rec-4",
+    "semanaId": "s3",
+    "titulo": "Video: La IA aplicada a los negocios reales",
+    "tipo": "video",
+    "url": "https://youtu.be/5Y_WAYQnO3c",
+    "descripcion": "Conferencia aplicada sobre diagnóstico y oportunidades de adopción de IA en MiPYMES.",
+    "fuente": "Canal Oficial UCR",
+    "moduloId": "m1"
+  },
+  {
+    "id": "rec-5",
+    "semanaId": "s3",
+    "titulo": "Plantilla Editable de Matriz FODA y TOWS",
+    "tipo": "plantilla",
+    "url": "templates/plantilla-foda.html",
+    "descripcion": "Herramienta interactiva y descargable para realizar el análisis estratégico del negocio.",
+    "fuente": "Caja de Herramientas MiPYME",
+    "moduloId": "m1"
+  },
+  {
+    "id": "rec-6",
+    "semanaId": "s4",
+    "titulo": "Plantilla del Plan de Acción a 90 Días",
+    "tipo": "plantilla",
+    "url": "templates/plantilla-ivu.html",
+    "descripcion": "Matriz de priorización y cronograma de 90 días para ejecutar las metas de la empresa.",
+    "fuente": "Caja de Herramientas MiPYME",
+    "moduloId": "m1"
+  },
+  {
+    "id": "rec-7",
+    "semanaId": "s5",
+    "titulo": "Video Tutorial: Automatización para PYMES con Make",
+    "tipo": "video",
+    "url": "https://youtu.be/ElhJ5GFQDgE",
+    "descripcion": "Paso a paso para crear un escenario No-Code conectando formularios con correos automáticos.",
+    "fuente": "Tutorial Práctico",
+    "moduloId": "m2"
+  },
+  {
+    "id": "rec-8",
+    "semanaId": "s6",
+    "titulo": "Manual de Automatización de WhatsApp con n8n o Make",
+    "tipo": "lectura",
+    "url": "https://gemini.google.com/share/43bc6db51c13",
+    "descripcion": "Guía de diseño conversacional, árboles lógicos y protocolos de escalamiento a humanos.",
+    "fuente": "CIOdD / UCR",
+    "moduloId": "m2"
+  },
+  {
+    "id": "rec-9",
+    "semanaId": "s7",
+    "titulo": "Plantilla de CRM Básico Seguro en Google Sheets",
+    "tipo": "plantilla",
+    "url": "templates/plantilla-crm-basico.html",
+    "descripcion": "Estructura relacional de clientes, historial de interacciones y embudo comercial.",
+    "fuente": "Caja de Herramientas MiPYME",
+    "moduloId": "m2"
+  },
+  {
+    "id": "rec-10",
+    "semanaId": "s8",
+    "titulo": "Video: El Valor y ROI de la Automatización Empresarial",
+    "tipo": "video",
+    "url": "https://youtu.be/AjG0NghxXzQ",
+    "descripcion": "Cómo medir ahorros tangibles de tiempo y costes en micro y pequeñas empresas.",
+    "fuente": "UCR / DIPROVID",
+    "moduloId": "m2"
+  },
+  {
+    "id": "rec-11",
+    "semanaId": "s9",
+    "titulo": "Video Tutorial: Canva y Generación de Imagen con IA",
+    "tipo": "video",
+    "url": "https://youtu.be/-nmNBOtHNig",
+    "descripcion": "Técnicas de diseño para emprendedores utilizando el Kit de Marca y herramientas de IA.",
+    "fuente": "Canva / Tutorial",
+    "moduloId": "m3"
+  },
+  {
+    "id": "rec-12",
+    "semanaId": "s10",
+    "titulo": "Video: Generación de Video, Voz y Avatares con IA",
+    "tipo": "video",
+    "url": "https://youtu.be/ReHGaWrwBfw",
+    "descripcion": "Uso responsable de herramientas de síntesis de voz, subtitulado y clips promocionales.",
+    "fuente": "Taller Aplicado",
+    "moduloId": "m3"
+  },
+  {
+    "id": "rec-13",
+    "semanaId": "s11",
+    "titulo": "Plantilla de Prefactibilidad Financiera y Punto de Equilibrio",
+    "tipo": "plantilla",
+    "url": "templates/plantilla-prefactibilidad.html",
+    "descripcion": "Calculadora de costos fijos, variables, margen de contribución y punto de equilibrio en colones.",
+    "fuente": "Caja de Herramientas MiPYME",
+    "moduloId": "m3"
+  },
+  {
+    "id": "rec-14",
+    "semanaId": "s12",
+    "titulo": "Plantilla de Plan de Campaña Comercial AIDA",
+    "tipo": "plantilla",
+    "url": "templates/plantilla-campana-aida.html",
+    "descripcion": "Estructura completa para calendarizar 4 semanas de contenidos, pauta y conversiones.",
+    "fuente": "Caja de Herramientas MiPYME",
+    "moduloId": "m3"
+  }
+]

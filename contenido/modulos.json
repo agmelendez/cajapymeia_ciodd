@@ -1,0 +1,50 @@
+[
+  {
+    "id": "m0",
+    "codigo": "Módulo 0",
+    "nombre": "Punto de Partida: Mi Perfil y Mi Negocio",
+    "frase": "¿Dónde estoy y qué ruta necesita mi empresa?",
+    "descripcion": "Autodiagnóstico inicial interactivo de 21 preguntas en 5 dimensiones (Competencias Digitales, Alfabetización en IA, Acceso a Tecnologías, Claridad de Beneficios y Contexto Pyme) para calcular su ruta formativa personalizada.",
+    "orden": 0,
+    "duracionSemanas": 0,
+    "tipo": "diagnostico",
+    "desbloqueadoPorDefecto": true,
+    "paraQuien": "Para toda persona emprendedora o empresaria de Costa Rica que inicia el programa. Permite identificar brechas y personalizar el acompañamiento."
+  },
+  {
+    "id": "m1",
+    "codigo": "Módulo I",
+    "nombre": "Diagnóstico Empresarial con IA",
+    "frase": "Miremos el negocio con lupa y rigor ético",
+    "descripcion": "En este módulo de 4 semanas configurará su ecosistema de herramientas de forma segura bajo la Ley 8968 de Costa Rica, dominará la ingeniería de prompts con el modelo CIFRCE, construirá un FODA dinámico cruzado (TOWS) con perfil de cliente y formulará un Plan de Acción Estratégico a 90 días.",
+    "orden": 1,
+    "duracionSemanas": 4,
+    "tipo": "aprendizaje",
+    "desbloqueadoPorDefecto": true,
+    "paraQuien": "Aplica tanto a ideas nacientes (validación preliminar y plan de arranque) como a empresas en marcha (radiografía operativa y priorización estratégica)."
+  },
+  {
+    "id": "m2",
+    "codigo": "Módulo II",
+    "nombre": "Automatización de Procesos y Operaciones",
+    "frase": "Ahorrar tiempo y ordenar mejor con tecnología",
+    "descripcion": "En este módulo de 4 semanas aprenderá a mapear tareas repetitivas y cuellos de botella, delegar flujos de trabajo sin código (No-Code en Make/n8n), diseñar asistentes virtuales (chatbots) para WhatsApp Business con escalamiento humano, estructurar un CRM seguro en Google Sheets y calcular el Retorno de Inversión (ROI).",
+    "orden": 2,
+    "duracionSemanas": 4,
+    "tipo": "aprendizaje",
+    "desbloqueadoPorDefecto": true,
+    "paraQuien": "Aplica para negocios que sufren sobrecarga operativa y desean liberar horas semanales automatizando consultas y registros de clientes de forma segura."
+  },
+  {
+    "id": "m3",
+    "codigo": "Módulo III",
+    "nombre": "Comercialización, Audiovisual y Viabilidad",
+    "frase": "Vender mejor con evidencia y criterio de negocio",
+    "descripcion": "En este módulo de 4 semanas creará o refinará la identidad visual de su marca en Canva asistida por IA, producirá contenidos audiovisuales y locuciones sintéticas éticas, calculará la prefactibilidad financiera y punto de equilibrio en colones, y estructurará una campaña comercial completa bajo el modelo AIDA.",
+    "orden": 3,
+    "duracionSemanas": 4,
+    "tipo": "aprendizaje",
+    "desbloqueadoPorDefecto": true,
+    "paraQuien": "Aplica para emprendedores que necesitan aumentar sus ventas, mejorar su presencia digital profesional y fundamentar decisiones de inversión con números claros."
+  }
+]

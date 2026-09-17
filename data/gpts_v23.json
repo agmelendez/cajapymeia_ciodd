@@ -1,0 +1,86 @@
+{
+  "fases": {
+    "fase1_genericos": [
+      {
+        "nombre": "Validador de Ideas",
+        "modulo": "Módulo A",
+        "descripcion": "Analiza la viabilidad de una idea con preguntas estructuradas y entrega un reporte de mercado, riesgos y recomendaciones.",
+        "icono": "💡"
+      },
+      {
+        "nombre": "Constructor de Buyer Persona",
+        "modulo": "Módulo A",
+        "descripcion": "Guía la definición del cliente ideal basándose en dolores y motivaciones reales.",
+        "icono": "🎯"
+      },
+      {
+        "nombre": "FODA Dinámico",
+        "modulo": "Módulo B",
+        "descripcion": "Conduce el análisis FODA con preguntas, pondera factores y entrega estrategias cruzadas TOWS.",
+        "icono": "📊"
+      },
+      {
+        "nombre": "Plan de Acción 90 días",
+        "modulo": "Módulo B",
+        "descripcion": "Toma el FODA como insumo y genera un plan priorizado con métricas claras.",
+        "icono": "🗓️"
+      },
+      {
+        "nombre": "Banco de Respuestas al Cliente",
+        "modulo": "Módulo C",
+        "descripcion": "Genera respuestas rápidas para WhatsApp Business a partir de preguntas frecuentes.",
+        "icono": "💬"
+      },
+      {
+        "nombre": "Creador de Contenido",
+        "modulo": "Módulo D",
+        "descripcion": "Genera un plan de contenido mensual y textos listos para publicar según el tono de marca.",
+        "icono": "📝"
+      },
+      {
+        "nombre": "Estrategia de Precios",
+        "modulo": "Módulo D",
+        "descripcion": "Analiza los precios actuales y sugiere ajustes basados en psicología de precios y anclaje.",
+        "icono": "🏷️"
+      },
+      {
+        "nombre": "Asesor Financiero Básico",
+        "modulo": "Módulo E",
+        "descripcion": "Calcula costos, precios, punto de equilibrio y simula escenarios de inversión.",
+        "icono": "📈"
+      }
+    ],
+    "fase2_sectoriales": [
+      {
+        "sector": "Servicios Profesionales",
+        "porcentaje_sondeo": "50%",
+        "gpts": ["FODA Servicios", "Validador Servicios", "Precios para Servicios"],
+        "icono": "💼"
+      },
+      {
+        "sector": "Comercio Minorista",
+        "porcentaje_sondeo": "37%",
+        "gpts": ["FODA Comercio", "Validador Comercio", "Gestión de Inventario"],
+        "icono": "🛍️"
+      },
+      {
+        "sector": "Industria y Manufactura",
+        "porcentaje_sondeo": "13%",
+        "gpts": ["FODA Industria", "Costos de Producción", "Escalamiento Industrial"],
+        "icono": "🏭"
+      },
+      {
+        "sector": "Agroalimentario",
+        "porcentaje_sondeo": "En Industria",
+        "gpts": ["Validador Agroalimentario", "FODA Agro", "Prefactibilidad Agro"],
+        "icono": "🌱"
+      },
+      {
+        "sector": "Turismo y Hospitalidad",
+        "porcentaje_sondeo": "En Servicios",
+        "gpts": ["FODA Turismo", "Estrategia Turismo", "Atención Turismo"],
+        "icono": "🏖️"
+      }
+    ]
+  }
+}

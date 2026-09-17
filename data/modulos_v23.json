@@ -1,0 +1,226 @@
+{
+  "programa": "Caja de Herramientas de Inteligencia Artificial para la MiPYME",
+  "version": "v23 (Julio 2026)",
+  "institucion": "Universidad de Costa Rica - CIOdD / DIPROVID",
+  "aliado": "Programa Auge",
+  "toolkit_preoperativo": {
+    "titulo": "Toolkit 1: Etapa Pre-operativa (Validación Temprana)",
+    "descripcion": "Diseñado para emprendedores con una idea de negocio o negocio en fase inicial antes de iniciar operaciones formales.",
+    "semanas": [
+      {
+        "id": "T1-S1",
+        "semana": "Semana T1-1",
+        "titulo": "Exploración de Oportunidades y Tendencias",
+        "objetivo": "Identificar problemas reales y necesidades insatisfechas en el mercado costarricense utilizando herramientas gratuitas de búsqueda de tendencias.",
+        "texto_teorico": "Antes de gastar tiempo o dinero en desarrollar un producto, el emprendedor debe verificar si existe interés o búsquedas activas sobre el problema que pretende resolver.",
+        "herramienta": "Google Trends + Exploding Topics",
+        "prompt_rhec": {
+          "rol": "Analista de Investigación de Mercado especializado en MiPYMEs de Costa Rica",
+          "historia": "Tengo una idea de negocio enfocada en ofrecer servicios de repostería saludable para personas con restricciones dietéticas en la Gran Área Metropolitana (GAM).",
+          "exactitud": "Analiza las tendencias de búsqueda recientes en Costa Rica sobre comida saludable y libre de gluten.",
+          "contexto": "Dame un listado de 5 necesidades insatisfechas específicas y 3 riesgos principales de demanda."
+        },
+        "entregable": "Reporte de Oportunidad de Mercado (Ficha de 1 página)"
+      },
+      {
+        "id": "T1-S2",
+        "semana": "Semana T1-2",
+        "titulo": "Definición del Cliente Ideal (Buyer Persona)",
+        "objetivo": "Construir el perfil detallado del cliente objetivo especificando dolores, motivaciones, hábitos de compra y canales de comunicación.",
+        "texto_teorico": "Un error común en etapas pre-operativas es asumir que 'todo el mundo' es cliente. Definir un Buyer Persona permite enfocar los recursos de marketing.",
+        "herramienta": "ChatGPT / Claude / Gemini",
+        "prompt_rhec": {
+          "rol": "Especialista en Comportamiento del Consumidor",
+          "historia": "Voy a lanzar un servicio de consultoría contable digital para profesionales independientes en Costa Rica.",
+          "exactitud": "Ayúdame a construir una ficha de Buyer Persona detallada con base en la metodología de Adele Revella.",
+          "contexto": "Incluye: Perfil demográfico, principales 3 dolores diarios, qué los detiene de contratar un contador y cuál es su canal de contacto preferido (ej. WhatsApp / LinkedIn)."
+        },
+        "entregable": "Ficha completa de Buyer Persona"
+      },
+      {
+        "id": "T1-S3",
+        "semana": "Semana T1-3",
+        "titulo": "Diseño de Encuestas de Validación Primaria (Mom Test)",
+        "objetivo": "Diseñar guiones de entrevista sin sesgo para aprender del comportamiento pasado del cliente en lugar de preguntas hipotéticas.",
+        "texto_teorico": "Preguntar '¿Comprarías mi producto?' genera respuestas falsamente positivas. La metodología Mom Test enseña a preguntar sobre hechos pasados.",
+        "herramienta": "GPT Validador / Form de Validación",
+        "prompt_rhec": {
+          "rol": "Investigador Cualitativo de Clientes",
+          "historia": "Tengo una propuesta de suscripción mensual de café gourmet costarricense para oficinas pequeñas.",
+          "exactitud": "Genera un guion de 5 preguntas de entrevista aplicando los principios del Mom Test de Rob Fitzpatrick.",
+          "contexto": "Evita preguntas sobre el futuro. Enforma las preguntas sobre cómo compran café actualmente, cuánto gastaron la última vez y qué problemas tuvieron."
+        },
+        "entregable": "Guion de entrevista de 5 preguntas validado"
+      },
+      {
+        "id": "T1-S4",
+        "semana": "Semana T1-4",
+        "titulo": "Modelado de Negocio Socrático (Lean Canvas)",
+        "objetivo": "Mapear los 9 bloques del Lean Canvas cuestionando los supuestos críticos con asistencia de IA.",
+        "texto_teorico": "El Lean Canvas de Ash Maurya adapta el Business Model Canvas para enfocarse en problemas, soluciones, métricas clave y ventaja única en etapas tempranas.",
+        "herramienta": "GPT Lean Canvas Socrático",
+        "prompt_rhec": {
+          "rol": "Mentor de Emprendimiento e Incubación de Negocios",
+          "historia": "He validado que existe demanda para un taller móvil de reparación de bicicletas a domicilio en San José.",
+          "exactitud": "Actúa de forma socrática haciéndome una pregunta a la vez para completar los 9 bloques del Lean Canvas.",
+          "contexto": "Al final, resume la estructura completa y resalta el supuesto de mayor riesgo que debo probar primero."
+        },
+        "entregable": "Lean Canvas preliminar estructurado"
+      }
+    ]
+  },
+  "modulos_principales": [
+    {
+      "id": "Modulo-A",
+      "letra": "A",
+      "titulo": "Módulo A: Validación de Idea y Cliente",
+      "descripcion": "Enfoque en validación de hipótesis comerciales y encaje producto-mercado.",
+      "semanas": [
+        {
+          "semana": "Semana A-1",
+          "titulo": "Diferencia entre Interés e Intención de Compra",
+          "concepto": "Validación con evidencia de comportamiento (Steve Blank / Eric Ries).",
+          "herramienta": "GPT Validador de Ideas",
+          "entregable": "Reporte de validación de demanda real."
+        },
+        {
+          "semana": "Semana A-2",
+          "titulo": "Metodología de Buyer Persona Basada en Evidencia",
+          "concepto": "Construcción de arquetipos con datos reales de entrevistas (Adele Revella).",
+          "herramienta": "Constructor de Buyer Persona",
+          "entregable": "Perfil validado con dolores y motivaciones."
+        },
+        {
+          "semana": "Semana A-3",
+          "titulo": "Formulación de Preguntas sin Sesgo (Mom Test)",
+          "concepto": "Cómo evaluar intención real indagando comportamiento pasado (Rob Fitzpatrick).",
+          "herramienta": "Simulador de Entrevistas IA",
+          "entregable": "Guion y análisis de 5 entrevistas."
+        },
+        {
+          "semana": "Semana A-4",
+          "titulo": "Lean Canvas de 9 Bloques",
+          "concepto": "Estructuración del modelo de negocio dinámico (Ash Maurya / Osterwalder).",
+          "herramienta": "GPT Lean Canvas",
+          "entregable": "Lienzo de modelo de negocio completo."
+        },
+        {
+          "semana": "Semana A-5",
+          "titulo": "Ciclo Crear-Medir-Aprender y Pivote",
+          "concepto": "Decisión estratégica entre pivotar o perseverar basada en datos.",
+          "herramienta": "Matriz de Pivote IA",
+          "entregable": "Informe de aprendizajes y ajustes a la propuesta."
+        }
+      ]
+    },
+    {
+      "id": "Modulo-B",
+      "letra": "B",
+      "titulo": "Módulo B: Diagnóstico Estratégico y Planificación",
+      "descripcion": "Análisis situacional, matrices TOWS y planes de acción priorizados a 90 días.",
+      "semanas": [
+        {
+          "semana": "Semana B-1",
+          "titulo": "Análisis FODA y Matriz Cruzada TOWS",
+          "concepto": "Estrategias FO, FA, DO y DA basadas en Albert Humphrey y Heinz Weihrich.",
+          "herramienta": "FODA Dinámico GPT",
+          "entregable": "Matriz FODA cruzada con priorización."
+        },
+        {
+          "semana": "Semana B-2",
+          "titulo": "Matriz de Impacto vs. Esfuerzo",
+          "concepto": "Priorización ágil de iniciativas y victorias rápidas (Quick Wins).",
+          "herramienta": "Planificador de 90 Días",
+          "entregable": "Plan de acción priorizado para 3 meses."
+        }
+      ]
+    },
+    {
+      "id": "Modulo-C",
+      "letra": "C",
+      "titulo": "Módulo C: Operaciones y Atención al Cliente",
+      "descripcion": "Optimización de procesos, canales conversacionales como WhatsApp y estandarización.",
+      "semanas": [
+        {
+          "semana": "Semana C-1",
+          "titulo": "Identificación de Cuellos de Botella Operativos",
+          "concepto": "Teoría de las Restricciones aplicada a MiPYMEs (Eliyahu Goldratt).",
+          "herramienta": "Mapeador de Procesos IA",
+          "entregable": "Diagrama de flujo operativo con mejoras."
+        },
+        {
+          "semana": "Semana C-2",
+          "titulo": "Estrategia de Retención en WhatsApp Business",
+          "concepto": "Costos de retención vs adquisición (Bain & Co / Harvard Business Review). Datos CIOdD-UCR (52% falta estrategia).",
+          "herramienta": "Banco de Respuestas al Cliente GPT",
+          "entregable": "Catálogo de respuestas rápidas y flujo de atención."
+        },
+        {
+          "semana": "Semana C-3",
+          "titulo": "Estandarización de Manuales Operativos",
+          "concepto": "Documentación de procesos para consistencia y calidad (Alineado a ISO 9001).",
+          "herramienta": "Generador de Procedimientos (SOP)",
+          "entregable": "Manual de procedimientos operativos clave."
+        }
+      ]
+    },
+    {
+      "id": "Modulo-D",
+      "letra": "D",
+      "titulo": "Módulo D: Marketing, Ventas y Precios",
+      "descripcion": "Estrategia de contenidos, psicología de precios y embudos de ventas.",
+      "semanas": [
+        {
+          "semana": "Semana D-1",
+          "titulo": "Identidad de Marca y Tono de Voz",
+          "concepto": "Construcción de marca y consistencia comunicativa (David Aaker).",
+          "herramienta": "Creador de Contenido GPT",
+          "entregable": "Manual de tono de voz y calendario mensual."
+        },
+        {
+          "semana": "Semana D-2",
+          "titulo": "Psicología de Precios y Anclaje",
+          "concepto": "Charm pricing (terminaciones en 9) y efecto de opción intermedia (Poundstone / Ariely).",
+          "herramienta": "Estrategia de Precios GPT",
+          "entregable": "Estructura de precios y paquetes optimizados."
+        },
+        {
+          "semana": "Semana D-4",
+          "titulo": "Modelo AIDA para Embudos de Venta",
+          "concepto": "Atención, Interés, Deseo y Acción en textos comerciales (E. St. Elmo Lewis).",
+          "herramienta": "Redactor AIDA IA",
+          "entregable": "Secuencia de 3 mensajes de ventas optimizados."
+        }
+      ]
+    },
+    {
+      "id": "Modulo-E",
+      "letra": "E",
+      "titulo": "Módulo E: Finanzas y Escalamiento",
+      "descripcion": "Estructura de costos, punto de equilibrio, análisis de escenarios y escalamiento.",
+      "semanas": [
+        {
+          "semana": "Semana E-1",
+          "titulo": "Costos Fijos, Variables y Punto de Equilibrio",
+          "concepto": "Análisis costo-volumen-utilidad (CVP) para la gestión gerencial.",
+          "herramienta": "Asesor Financiero Básico GPT",
+          "entregable": "Calculadora de punto de equilibrio personalizada."
+        },
+        {
+          "semana": "Semana E-2",
+          "titulo": "Análisis de Escenarios de Inversión",
+          "concepto": "Evaluación de escenarios optimista, realista y pesimista para la toma de decisiones.",
+          "herramienta": "Simulador de Escenarios IA",
+          "entregable": "Matriz de sensibilidad de decisiones financieras."
+        },
+        {
+          "semana": "Semana E-3",
+          "titulo": "Diferencia entre Crecer y Escalar",
+          "concepto": "Estrategias para aumentar ingresos sin incrementar costos proporcionalmente (Verne Harnish).",
+          "herramienta": "Evaluador de Escalamiento",
+          "entregable": "Plan de escalabilidad operativa a 1 año."
+        }
+      ]
+    }
+  ]
+}

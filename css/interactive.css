@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Caja de Herramientas IA para MiPYME - Interactive CSS
+   Modal de Autodiagnóstico, Badges y Filtros Sectoriales
+   ========================================================================== */
+
+/* Componente de Autodiagnóstico */
+.assessment-container {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-light);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.question-block {
+  margin-bottom: 24px;
+}
+
+.question-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ucr-primary);
+  margin-bottom: 12px;
+}
+
+.option-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: var(--transition-fast);
+}
+
+.option-btn:hover, .option-btn.selected {
+  border-color: var(--ucr-accent);
+  background-color: rgba(0, 168, 107, 0.08);
+  font-weight: 600;
+}
+
+/* Badge y Tags */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.badge-sector {
+  background-color: rgba(26, 82, 118, 0.1);
+  color: var(--ucr-secondary);
+}
+
+.badge-toolkit {
+  background-color: rgba(230, 126, 34, 0.15);
+  color: var(--ucr-highlight);
+}
+
+/* Notificación Flotante de Copiado */
+.toast-notification {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: var(--text-dark);
+  color: white;
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: var(--transition-fast);
+  pointer-events: none;
+}
+
+.toast-notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}

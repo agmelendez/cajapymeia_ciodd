@@ -1,0 +1,163 @@
+/* ==========================================================================
+   Caja de Herramientas IA para MiPYME - Main CSS (v23 / 3.0)
+   Estilo Institucional UCR + Modernity (Glassmorphism & Clean Typography)
+   ========================================================================== */
+
+:root {
+  /* Paleta Institucional UCR */
+  --ucr-primary: #003366;       /* Azul UCR */
+  --ucr-secondary: #1A5276;     /* Azul Medio */
+  --ucr-accent: #00A86B;        /* Verde / Cyan Tecnológico */
+  --ucr-highlight: #E67E22;     /* Naranja de acento */
+  
+  /* Tonos Neutros */
+  --bg-main: #F8F9FA;
+  --bg-card: #FFFFFF;
+  --bg-glass: rgba(255, 255, 255, 0.85);
+  --text-dark: #1E293B;
+  --text-muted: #64748B;
+  --border-light: #E2E8F0;
+
+  /* Elevación y Sombras */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
+  
+  /* Bordes y Transiciones */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --transition-fast: all 0.2s ease-in-out;
+  --transition-normal: all 0.3s ease-in-out;
+
+  /* Fuente Principal */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+/* Reset y Bases */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Layout General */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Institucional */
+.site-header {
+  background-color: var(--ucr-primary);
+  color: white;
+  padding: 14px 0;
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.brand-logos {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+}
+
+.brand-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brand-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: var(--transition-fast);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--ucr-primary) 0%, var(--ucr-secondary) 100%);
+  color: white;
+  padding: 65px 0 50px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.15rem;
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  opacity: 0.9;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--ucr-primary);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 30px 0;
+  margin-top: 60px;
+  font-size: 0.9rem;
+  text-align: center;
+  border-top: 4px solid var(--ucr-accent);
+}

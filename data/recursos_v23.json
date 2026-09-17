@@ -1,0 +1,88 @@
+{
+  "programa": "Caja de Herramientas de Inteligencia Artificial para la MiPYME",
+  "version": "v23 (Julio 2026)",
+  "institucion": "Universidad de Costa Rica - CIOdD / DIPROVID",
+  "aliado": "Programa Auge",
+  "fuentes_teoricas": [
+    {
+      "semana": "F-1",
+      "tema": "Controles de privacidad y uso de datos",
+      "fuente": "OpenAI Help Center - Configuración de privacidad; Ley N.º 8968 (PRODHAB Costa Rica)."
+    },
+    {
+      "semana": "A-1",
+      "tema": "Diferencia entre interés e intención de compra",
+      "fuente": "Steve Blank (Customer Development) & Eric Ries (The Lean Startup, 2011)."
+    },
+    {
+      "semana": "A-2",
+      "tema": "Metodología Buyer Persona con evidencia",
+      "fuente": "Adele Revella (Buyer Persona Institute, 2015)."
+    },
+    {
+      "semana": "A-3",
+      "tema": "Formulación de preguntas sin sesgo (Mom Test)",
+      "fuente": "Rob Fitzpatrick (The Mom Test, 2013)."
+    },
+    {
+      "semana": "A-4",
+      "tema": "Lean Canvas de 9 bloques",
+      "fuente": "Ash Maurya (Running Lean, 2012) & Alexander Osterwalder."
+    },
+    {
+      "semana": "B-1",
+      "tema": "Análisis FODA y Matriz TOWS cruzada",
+      "fuente": "Albert S. Humphrey (Stanford) & Heinz Weihrich (Long Range Planning, 1982)."
+    },
+    {
+      "semana": "B-2",
+      "tema": "Matriz Impacto vs. Esfuerzo",
+      "fuente": "Product Development and Management Association (PDMA) & Lean/Agile."
+    },
+    {
+      "semana": "C-1",
+      "tema": "Cuellos de botella operativos",
+      "fuente": "Eliyahu M. Goldratt (The Goal - Teoría de las Restricciones, 1984)."
+    },
+    {
+      "semana": "C-2",
+      "tema": "Costo de retención de clientes & WhatsApp en Costa Rica",
+      "fuente": "Bain & Company (Harvard Business Review) & Sondeo CIOdD-UCR (2025)."
+    },
+    {
+      "semana": "D-1",
+      "tema": "Identidad de marca y tono de voz",
+      "fuente": "David A. Aaker (Building Strong Brands, 1996)."
+    },
+    {
+      "semana": "D-2",
+      "tema": "Psicología de precios (Charm pricing y Anclaje)",
+      "fuente": "William Poundstone (Priceless, 2010) & Dan Ariely (Predictably Irrational, 2008)."
+    },
+    {
+      "semana": "D-4",
+      "tema": "Modelo AIDA para embudos",
+      "fuente": "Elias St. Elmo Lewis (1898) & Edward K. Strong Jr. (1925)."
+    },
+    {
+      "semana": "E-1",
+      "tema": "Costos fijos, variables y punto de equilibrio",
+      "fuente": "Horngren (Cost Accounting: A Managerial Emphasis)."
+    },
+    {
+      "semana": "E-3",
+      "tema": "Diferencia entre crecer y escalar",
+      "fuente": "Verne Harnish (Scaling Up, 2014)."
+    }
+  ],
+  "actividades_cierre": {
+    "titulo": "Carta a mi negocio dentro de un año",
+    "descripcion": "Como actividad de cierre del programa, el participante escribe una carta dirigida a su propio negocio 12 meses después, describiendo logros, retos y consejos.",
+    "entregables": [
+      {
+        "nombre": "Carta de Cierre de Negocio",
+        "requisito": "Mínimo 300 palabras (compartida opcionalmente en el foro de cierre)."
+      }
+    ]
+  }
+}

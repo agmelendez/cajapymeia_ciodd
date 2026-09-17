@@ -1,0 +1,782 @@
+// --- UCR CAJA DE HERRAMIENTAS IA - SCRIPT.JS ---
+
+// Protección contra Clickjacking (Frame-busting)
+if (window.self !== window.top) {
+    window.top.location = window.self.location;
+}
+
+// 1. REVEAL ANIMATIONS ON SCROLL (Intersection Observer)
+const observerOptions = {
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Add fade-in transition properties to major sections
+document.querySelectorAll('.concept-card, .module-card, .res-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+    observer.observe(el);
+});
+
+
+// 2. LIGHTBOX LOGIC FOR INFOGRAPHICS
+document.addEventListener('DOMContentLoaded', () => {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const lightboxDownload = document.getElementById('lightbox-download');
+    const thumbnails = document.querySelectorAll('.infographic-thumb');
+
+    if (!lightbox) return; // Exit if lightbox not in DOM
+
+    // Open lightbox
+    thumbnails.forEach(thumb => {
+        thumb.addEventListener('click', () => {
+            const imgSrc = thumb.getAttribute('src');
+            
+            // Set image source
+            lightboxImg.setAttribute('src', imgSrc);
+            
+            // Set download link attributes
+            lightboxDownload.setAttribute('href', imgSrc);
+            // Extract filename from path for the download attribute
+            const fileName = imgSrc.split('/').pop();
+            lightboxDownload.setAttribute('download', fileName);
+            
+            // Show lightbox
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+    });
+
+    // Close lightbox function
+    const closeLightbox = () => {
+        lightbox.classList.remove('active');
+        // Clear src after fade out to avoid ghosting
+        setTimeout(() => {
+            lightboxImg.setAttribute('src', '');
+        }, 300);
+        document.body.style.overflow = ''; // Restore scrolling
+    };
+
+    // Close on X click
+    if (lightboxClose) {
+        lightboxClose.addEventListener('click', closeLightbox);
+    }
+
+    // Close on background click
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            closeLightbox();
+        }
+    });
+});
+
+
+// 3. CORE NAVIGATION, SIDEBAR & INTERACTIVE MODULE SELECTOR LOGIC
+document.addEventListener('DOMContentLoaded', () => {
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+    const toggleBtn = document.getElementById('sidebar-toggle-btn');
+    const closeBtn = document.getElementById('sidebar-close-btn');
+    const sidebarLinks = document.querySelectorAll('.sidebar-link, .sidebar-sublink');
+
+    // Sidebar Mobile Toggle
+    if (toggleBtn && sidebar) {
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.add('active');
+            if (sidebarOverlay) sidebarOverlay.classList.add('active');
+        });
+
+        const closeSidebar = () => {
+            sidebar.classList.remove('active');
+            if (sidebarOverlay) sidebarOverlay.classList.remove('active');
+        };
+
+        if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+        if (sidebarOverlay) sidebarOverlay.addEventListener('click', closeSidebar);
+
+        // Close sidebar on link click (mobile)
+        sidebar.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 992) {
+                    closeSidebar();
+                }
+            });
+        });
+    }
+
+    // --- INTERACTIVE MODULE SELECTOR (DASHBOARD) ---
+    const moduleIds = ['modulo0', 'mf', 'ma', 'mb', 'mc', 'md', 'me'];
+    const modules = moduleIds.map(id => document.getElementById(id)).filter(Boolean);
+    const syllabusSection = document.getElementById('contenidos');
+    
+    // Inject the Selector grid HTML dynamically inside the Syllabus (Estructura del Programa) section
+    if (syllabusSection) {
+        const buttonsDiv = syllabusSection.querySelector('div[style*="text-align: center"]');
+        const selectorHTML = `
+            <div class="selector-modulos-container">
+                <h4 class="selector-titulo">Explore los contenidos del programa haciendo clic en un módulo:</h4>
+                <div class="selector-modulos-grid">
+                    <button class="selector-modulo-card" data-target="mf" style="--accent-color: #1A5276;">
+                        <div class="selector-card-icon">🔑</div>
+                        <div class="selector-card-info">
+                            <span class="selector-card-tag">Fundamentos</span>
+                            <span class="selector-card-name">Uso de ChatGPT</span>
+                        </div>
+                    </button>
+                    <button class="selector-modulo-card" data-target="ma" style="--accent-color: #1E8449;">
+                        <div class="selector-card-icon">🌱</div>
+                        <div class="selector-card-info">
+                            <span class="selector-card-tag">Módulo A</span>
+                            <span class="selector-card-name">Validar Idea</span>
+                        </div>
+                    </button>
+                    <button class="selector-modulo-card" data-target="mb" style="--accent-color: var(--ucr-blue);">
+                        <div class="selector-card-icon">📊</div>
+                        <div class="selector-card-info">
+                            <span class="selector-card-tag">Módulo B</span>
+                            <span class="selector-card-name">Diagnóstico IA</span>
+                        </div>
+                    </button>
+                    <button class="selector-modulo-card" data-target="mc" style="--accent-color: var(--ucr-celeste);">
+                        <div class="selector-card-icon">⚙️</div>
+                        <div class="selector-card-info">
+                            <span class="selector-card-tag">Módulo C</span>
+                            <span class="selector-card-name">Procesos</span>
+                        </div>
+                    </button>
+                    <button class="selector-modulo-card" data-target="md" style="--accent-color: #f39c12;">
+                        <div class="selector-card-icon">📢</div>
+                        <div class="selector-card-info">
+                            <span class="selector-card-tag">Módulo D</span>
+                            <span class="selector-card-name">Comercialización</span>
+                        </div>
+                    </button>
+                    <button class="selector-modulo-card" data-target="me" style="--accent-color: #8e44ad;">
+                        <div class="selector-card-icon">📈</div>
+                        <div class="selector-card-info">
+                            <span class="selector-card-tag">Módulo E</span>
+                            <span class="selector-card-name">Finanzas</span>
+                        </div>
+                    </button>
+                </div>
+                <div id="selector-instruccion" class="selector-instruccion">
+                    💡 Haga clic en cualquier módulo para abrir su contenido interactivo y guías de trabajo.
+                </div>
+            </div>
+        `;
+
+        if (buttonsDiv) {
+            buttonsDiv.insertAdjacentHTML('afterend', selectorHTML);
+        } else {
+            const header = syllabusSection.querySelector('.section-header');
+            if (header) header.insertAdjacentHTML('afterend', selectorHTML);
+        }
+    }
+
+    const selectorCards = document.querySelectorAll('.selector-modulo-card');
+    const instructionText = document.getElementById('selector-instruccion');
+
+    // --- MULTI-PAGE VIEW MANAGER (showPage) ---
+    const showPage = (pageId, shouldScroll = true) => {
+        const homeSections = [
+            document.querySelector('.hero'),
+            document.querySelector('.methodology-section'),
+            document.querySelector('.frameworks'),
+            document.querySelector('.learning-path')
+        ].filter(Boolean);
+
+        const syllabusHeader = document.querySelector('#contenidos .section-header');
+        const syllabusButtons = document.querySelector('#contenidos div[style*="text-align: center"]');
+        const selectorContainer = document.querySelector('.selector-modulos-container');
+
+        const credenciales = document.getElementById('credenciales');
+        const recursos = document.getElementById('recursos');
+
+        // 1. PAGE: HOME / INICIO
+        if (pageId === 'inicio') {
+            // Show all home elements
+            homeSections.forEach(el => el.classList.remove('oculto'));
+            if (syllabusHeader) syllabusHeader.classList.remove('oculto');
+            if (syllabusButtons) syllabusButtons.classList.remove('oculto');
+            if (selectorContainer) selectorContainer.classList.remove('oculto');
+
+            // Hide all modules
+            modules.forEach(mod => mod.classList.add('oculto'));
+
+            // Show Credenciales and Recursos
+            if (credenciales) credenciales.classList.remove('oculto');
+            if (recursos) recursos.classList.remove('oculto');
+
+            // Reset active states on selector cards
+            selectorCards.forEach(c => c.classList.remove('activo'));
+            if (instructionText) {
+                instructionText.innerHTML = '💡 Haga clic en cualquier módulo para abrir su contenido interactivo y guías de trabajo.';
+            }
+
+            // Sync sidebar
+            makeActiveSidebar('inicio');
+
+            // Scroll to top
+            if (shouldScroll) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Quietly clear hash from URL
+            if (window.location.hash && window.location.hash !== '#inicio') {
+                history.pushState("", document.title, window.location.pathname + window.location.search);
+            }
+            return;
+        }
+
+        // 2. PAGES: MODULES (modulo0, toolkit1, modulo1, modulo2, modulo3)
+        if (moduleIds.includes(pageId)) {
+            // Hide home sections
+            homeSections.forEach(el => el.classList.add('oculto'));
+            if (syllabusHeader) syllabusHeader.classList.add('oculto');
+            if (syllabusButtons) syllabusButtons.classList.add('oculto');
+            if (selectorContainer) selectorContainer.classList.add('oculto');
+
+            // Hide Credenciales and Recursos
+            if (credenciales) credenciales.classList.add('oculto');
+            if (recursos) recursos.classList.add('oculto');
+
+            // Toggle modules: show selected, hide others
+            modules.forEach(mod => {
+                const id = mod.getAttribute('id');
+                if (id === pageId) {
+                    mod.classList.remove('oculto');
+                    // Force immediately visible opacity
+                    mod.style.opacity = '1';
+                    mod.style.transform = 'translateY(0)';
+                    mod.querySelectorAll('.concept-card, .res-card').forEach(el => {
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateY(0)';
+                    });
+                } else {
+                    mod.classList.add('oculto');
+                }
+            });
+
+            // Sync sidebar
+            makeActiveSidebar(pageId);
+
+            // Scroll to top of module (which is now right under header)
+            if (shouldScroll) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Update URL hash quietly
+            history.pushState("", document.title, window.location.pathname + window.location.search + '#' + pageId);
+            return;
+        }
+
+        // 3. PAGE: CREDENCIALES
+        if (pageId === 'credenciales') {
+            // Hide home sections
+            homeSections.forEach(el => el.classList.add('oculto'));
+            if (syllabusHeader) syllabusHeader.classList.add('oculto');
+            if (syllabusButtons) syllabusButtons.classList.add('oculto');
+            if (selectorContainer) selectorContainer.classList.add('oculto');
+
+            // Hide all modules
+            modules.forEach(mod => mod.classList.add('oculto'));
+
+            // Hide Recursos
+            if (recursos) recursos.classList.add('oculto');
+
+            // Show Credenciales
+            if (credenciales) {
+                credenciales.classList.remove('oculto');
+            }
+
+            // Sync sidebar
+            makeActiveSidebar('credenciales');
+
+            // Scroll to top
+            if (shouldScroll) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Update URL hash quietly
+            history.pushState("", document.title, window.location.pathname + window.location.search + '#credenciales');
+            return;
+        }
+
+        // 4. PAGE: RECURSOS
+        if (pageId === 'recursos') {
+            // Hide home sections
+            homeSections.forEach(el => el.classList.add('oculto'));
+            if (syllabusHeader) syllabusHeader.classList.add('oculto');
+            if (syllabusButtons) syllabusButtons.classList.add('oculto');
+            if (selectorContainer) selectorContainer.classList.add('oculto');
+
+            // Hide all modules
+            modules.forEach(mod => mod.classList.add('oculto'));
+
+            // Hide Credenciales
+            if (credenciales) credenciales.classList.add('oculto');
+
+            // Show Recursos
+            if (recursos) {
+                recursos.classList.remove('oculto');
+            }
+
+            // Sync sidebar
+            makeActiveSidebar('recursos');
+
+            // Scroll to top
+            if (shouldScroll) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Update URL hash quietly
+            history.pushState("", document.title, window.location.pathname + window.location.search + '#recursos');
+            return;
+        }
+    };
+
+    // Initially hide all modules to simplify the home page (handled by default showPage('inicio'))
+    // Click handler for Selector Cards
+    selectorCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const target = card.getAttribute('data-target');
+            showPage(target);
+        });
+    });
+
+    // Unified Link Interception & Navigation Handler
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (!href || href === '#') return;
+
+            const targetId = href.substring(1);
+
+            // Special case: Home / Inicio
+            if (targetId === 'inicio') {
+                e.preventDefault();
+                showPage('inicio');
+                return;
+            }
+
+            // Special case: Contenidos header link
+            if (targetId === 'contenidos') {
+                e.preventDefault();
+                showPage('inicio');
+                // Scroll to contenidos section
+                setTimeout(() => {
+                    const selectorContainer = document.querySelector('.selector-modulos-container');
+                    if (selectorContainer) {
+                        selectorContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 100);
+                return;
+            }
+
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                e.preventDefault();
+
+                // 1. Identify which page this belongs to
+                let pageId = null;
+                if (moduleIds.includes(targetId)) {
+                    pageId = targetId;
+                } else if (targetId === 'credenciales' || targetId === 'recursos') {
+                    pageId = targetId;
+                } else {
+                    // It might be a week inside a module
+                    const parentModule = targetElement.closest('.module-card, .seccion-modulo');
+                    if (parentModule) {
+                        pageId = parentModule.getAttribute('id');
+                    }
+                }
+
+                // 2. Activate page if we found it
+                if (pageId) {
+                    showPage(pageId, false);
+                }
+
+                // 3. Handle details accordion if target is inside details
+                let parentDetails = targetElement;
+                if (targetElement.tagName !== 'DETAILS') {
+                    parentDetails = targetElement.closest('details');
+                }
+                if (parentDetails) {
+                    parentDetails.open = true;
+                }
+
+                // 4. Scroll smoothly to target element
+                const scrollOffset = 85; // header margin
+                setTimeout(() => {
+                    const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                    window.scrollTo({
+                        top: elementPosition - scrollOffset,
+                        behavior: 'smooth'
+                    });
+                }, pageId ? 100 : 0);
+
+                // 5. Update sidebar active state
+                makeActiveSidebar(targetId);
+            }
+        });
+    });
+
+    // Function to manually set active state in sidebar links
+    const makeActiveSidebar = (targetId) => {
+        sidebarLinks.forEach(item => item.classList.remove('active'));
+        
+        let linkToActivate = document.querySelector(`.sidebar-menu a[href="#${targetId}"]`);
+        
+        // If not found directly, try to activate the parent module link
+        if (!linkToActivate) {
+            const el = document.getElementById(targetId);
+            if (el) {
+                const parentModule = el.closest('.module-card, .seccion-modulo');
+                if (parentModule) {
+                    const parentId = parentModule.getAttribute('id');
+                    linkToActivate = document.querySelector(`.sidebar-menu a[href="#${parentId}"]`);
+                }
+            }
+        }
+
+        if (linkToActivate) {
+            linkToActivate.classList.add('active');
+            if (linkToActivate.classList.contains('sidebar-sublink')) {
+                const parentItem = linkToActivate.closest('.sidebar-item');
+                if (parentItem) {
+                    const parentLink = parentItem.querySelector('.sidebar-link');
+                    if (parentLink) parentLink.classList.add('active');
+                }
+            }
+        }
+    };
+
+    // Scrollspy to highlight active sidebar menu item on scroll
+    const spyOptions = {
+        root: null,
+        rootMargin: '0px 0px -60% 0px',
+        threshold: 0
+    };
+
+    const spyObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // Scrollspy only reacts if element is intersecting and visible in DOM
+            if (entry.isIntersecting && entry.target.offsetParent !== null) {
+                const id = entry.target.getAttribute('id');
+                makeActiveSidebar(id);
+            }
+        });
+    }, spyOptions);
+
+    // Watch all major sections
+    const spySections = document.querySelectorAll('section[id], div[id].module-card');
+    spySections.forEach(section => spyObserver.observe(section));
+
+    // Deep linking: Check hash on page load, activate corresponding module and accordion
+    if (window.location.hash) {
+        const targetId = window.location.hash.substring(1);
+        
+        if (targetId === 'inicio') {
+            showPage('inicio');
+        } else {
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                let pageId = null;
+                if (moduleIds.includes(targetId)) {
+                    pageId = targetId;
+                } else if (targetId === 'credenciales' || targetId === 'recursos') {
+                    pageId = targetId;
+                } else {
+                    const parentModule = targetElement.closest('.module-card, .seccion-modulo');
+                    if (parentModule) {
+                        pageId = parentModule.getAttribute('id');
+                    }
+                }
+
+                if (pageId) {
+                    showPage(pageId, false);
+                }
+
+                let parentDetails = targetElement;
+                if (targetElement.tagName !== 'DETAILS') {
+                    parentDetails = targetElement.closest('details');
+                }
+                if (parentDetails) {
+                    parentDetails.open = true;
+                }
+
+                // Scroll to the hash element after a brief delay for page rendering
+                const scrollOffset = 85;
+                setTimeout(() => {
+                    const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                    window.scrollTo({
+                        top: elementPosition - scrollOffset,
+                        behavior: 'smooth'
+                    });
+                    makeActiveSidebar(targetId);
+                }, 300);
+            } else {
+                // If hash is not a valid element ID, show home
+                showPage('inicio');
+            }
+        }
+    } else {
+        // Default to home page view on load
+        showPage('inicio');
+    }
+});
+
+// 4. MÓDULO 0: DIAGNÓSTICO DE ENTRADA Y ENRUTAMIENTO PERSONALIZADO
+document.addEventListener('DOMContentLoaded', () => {
+    const respuestas = {};
+
+    const diagBtns = document.querySelectorAll('.diag-btn');
+    if (diagBtns.length === 0) return; // Exit if diagnostic section is not present
+
+    diagBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const eje = this.dataset.eje;
+            const valor = this.dataset.valor;
+            respuestas[eje] = valor;
+
+            // Marcar selección
+            const opcionesContainer = this.closest('.diag-opciones');
+            if (opcionesContainer) {
+                opcionesContainer.querySelectorAll('.diag-btn').forEach(b => b.classList.remove('seleccionado'));
+            }
+            this.classList.add('seleccionado');
+
+            // Determinar la pregunta actual
+            const preguntaActual = this.closest('.diag-pregunta');
+            if (!preguntaActual) return;
+            const idActual = preguntaActual.id;
+
+            let siguientePreguntaId = null;
+
+            // Limpieza de estados posteriores en caso de cambio de respuesta previa
+            if (idActual === 'diag-q1') {
+                // Si cambia la etapa de madurez, reseteamos todo lo demás
+                const q2 = document.getElementById('diag-q2');
+                const q2Pre = document.getElementById('diag-q2-pre');
+                const q3 = document.getElementById('diag-q3');
+                const res = document.getElementById('diag-resultado');
+
+                if (q2) q2.classList.add('oculto');
+                if (q2Pre) q2Pre.classList.add('oculto');
+                if (q3) q3.classList.add('oculto');
+                if (res) res.classList.add('oculto');
+
+                // Desmarcar selecciones posteriores
+                const followUps = ['diag-q2', 'diag-q2-pre', 'diag-q3'];
+                followUps.forEach(fId => {
+                    const el = document.getElementById(fId);
+                    if (el) {
+                        el.querySelectorAll('.diag-btn').forEach(b => b.classList.remove('seleccionado'));
+                    }
+                });
+                
+                // Limpiar valores en el objeto de respuestas
+                delete respuestas.herramienta;
+                delete respuestas.experiencia;
+
+                // Determinar cuál Pregunta 2 mostrar
+                if (valor === 'idea' || valor === 'prototipo') {
+                    siguientePreguntaId = 'diag-q2-pre';
+                } else {
+                    siguientePreguntaId = 'diag-q2';
+                }
+            } else if (idActual === 'diag-q2' || idActual === 'diag-q2-pre') {
+                // Si cambia la necesidad urgente, reseteamos la pregunta 3 y resultado
+                const q3 = document.getElementById('diag-q3');
+                const res = document.getElementById('diag-resultado');
+                
+                if (q3) q3.classList.add('oculto');
+                if (res) res.classList.add('oculto');
+
+                if (q3) {
+                    q3.querySelectorAll('.diag-btn').forEach(b => b.classList.remove('seleccionado'));
+                }
+                delete respuestas.experiencia;
+
+                siguientePreguntaId = 'diag-q3';
+            } else if (idActual === 'diag-q3') {
+                mostrarResultado();
+            }
+
+            if (siguientePreguntaId) {
+                setTimeout(() => {
+                    const siguientePregunta = document.getElementById(siguientePreguntaId);
+                    if (siguientePregunta) {
+                        siguientePregunta.classList.remove('oculto');
+                        siguientePregunta.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                }, 300);
+            }
+        });
+    });
+
+    function mostrarResultado() {
+        const resultado = document.getElementById('diag-resultado');
+        const texto = document.getElementById('diag-texto-resultado');
+        const btnIr = document.getElementById('diag-btn-ir');
+        
+        if (!resultado || !texto || !btnIr) return;
+
+        let ruta = '#modulo1';
+        let mensaje = '';
+        let consejoIA = '';
+
+        // Determinar recomendación basada en la madurez y necesidades específicas
+        if (respuestas.madurez === 'idea' || respuestas.madurez === 'prototipo') {
+            // RUTA PRE-OPERATIVA (Toolkit 1)
+            switch (respuestas.herramienta) {
+                case 'trends':
+                    ruta = '#t1-s1';
+                    mensaje = 'Te recomendamos iniciar en la <strong>Semana T1-S1: Validación de idea y tendencias de mercado</strong> del <strong>Toolkit 1 (Pre-Operativo)</strong>, donde aprenderás a usar Google Trends y Exploding Topics para analizar la demanda inicial de tu idea.';
+                    break;
+                case 'client':
+                    ruta = '#t1-s2';
+                    mensaje = 'Te recomendamos iniciar en la <strong>Semana T1-S2: Análisis de mercado y perfil de cliente</strong> del <strong>Toolkit 1 (Pre-Operativo)</strong>, ideal para diseñar tu Buyer Persona y Mapa de Empatía usando la IA como entrevistador.';
+                    break;
+                case 'survey':
+                    ruta = '#t1-s3';
+                    mensaje = 'Te recomendamos iniciar en la <strong>Semana T1-S3: Validación y recopilación de datos de clientes</strong> del <strong>Toolkit 1 (Pre-Operativo)</strong>, que te guiará para estructurar encuestas sin sesgos y procesar opiniones de clientes reales.';
+                    break;
+                case 'canvas':
+                    ruta = '#t1-s4';
+                    mensaje = 'Te recomendamos iniciar en la <strong>Semana T1-S4: Business Model Canvas preliminar</strong> del <strong>Toolkit 1 (Pre-Operativo)</strong>, ideal para estructurar tu propuesta de valor, canales, fuentes de ingresos y costos.';
+                    break;
+                default:
+                    ruta = '#toolkit1';
+                    mensaje = 'Comenzá por el <strong>Toolkit 1 (Pre-Operativo)</strong>: validación de ideas, análisis de mercado y modelo de negocio básico. Los Módulos I–III estarán disponibles cuando tu negocio esté en marcha.';
+            }
+        } else {
+            // RUTA OPERATIVA (Módulos I, II y III)
+            switch (respuestas.herramienta) {
+                case 'investigacion':
+                    ruta = '#modulo1';
+                    mensaje = 'Te recomendamos iniciar en el <strong>Módulo I — Diagnóstico con IA</strong>. Te ayudará a estructurar el FODA dinámico de tu negocio, definir a tu cliente ideal y trazar un plan estratégico de acción real.';
+                    break;
+                case 'financiero':
+                    ruta = '#m1-s3'; // Link directo a Semana 3 (FODA y finanzas básicas)
+                    mensaje = 'Tu punto de partida ideal es la <strong>Semana 3: Diagnóstico de Negocio (FODA y Finanzas Básicas)</strong> del <strong>Módulo I</strong>, donde aprenderás a estructurar estados de resultados simplificados y calcular tu punto de equilibrio con asistencia crítica de IA.';
+                    break;
+                case 'automatizacion':
+                    ruta = '#modulo2';
+                    mensaje = 'Tu ruta recomendada es el <strong>Módulo II — Automatización de Procesos</strong>, diseñado para que conectes aplicaciones con Make, configures respuestas automáticas y crees chatbots de atención sin saber programar.';
+                    break;
+                case 'contenido':
+                    ruta = '#modulo3';
+                    mensaje = 'Te recomendamos comenzar en el <strong>Módulo III — Comercialización con IA</strong>, donde estructurarás tu identidad visual en Canva, crearás videos cortos con avatares y diseñarás campañas comerciales bajo el framework AIDA.';
+                    break;
+                default:
+                    ruta = '#modulo1';
+                    mensaje = 'Te recomendamos comenzar por el <strong>Módulo I</strong> para tener una base sólida de diagnóstico y prompting antes de avanzar.';
+            }
+        }
+
+        // Agregar consejo basado en la experiencia previa con IA
+        switch (respuestas.experiencia) {
+            case 'ninguna':
+                consejoIA = '💡 <strong>Consejo de IA:</strong> Como estás dando tus primeros pasos con IA, te recomendamos revisar detenidamente las <strong>Semanas 1 y 2 del Módulo I</strong> para aprender a interactuar de forma segura y evitar compartir datos sensibles de tu negocio.';
+                break;
+            case 'google':
+                consejoIA = '💡 <strong>Consejo de IA:</strong> Ya usás la IA como buscador; ahora aprenderás a conversar con ella de forma interactiva. Prestá especial atención a la técnica de prompts <strong>CIFRCE</strong> en la Semana 2 del Módulo I para evitar respuestas genéricas.';
+                break;
+            case 'intermedia':
+                consejoIA = '💡 <strong>Consejo de IA:</strong> Con tu nivel creando prompts, podrás formular instrucciones muy estructuradas para modelar tu negocio. Recordá mantener siempre el criterio humano (Human-in-the-Loop) para validar los supuestos sugeridos.';
+                break;
+            case 'avanzada':
+                consejoIA = '💡 <strong>Consejo de IA:</strong> Tu experiencia previa te permitirá actuar como copiloto crítico de la IA, retando sus supuestos o pidiéndole que actúe en roles profesionales específicos para evaluar a fondo las propuestas generadas.';
+                break;
+        }
+
+        texto.innerHTML = `${mensaje}<br><br>${consejoIA}`;
+        btnIr.href = ruta;
+        resultado.classList.remove('oculto');
+        
+        setTimeout(() => {
+            resultado.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+    }
+});
+
+// --- LOGIC FOR COURSE ASSISTANT WIDGET ---
+document.addEventListener('DOMContentLoaded', () => {
+    const assistantWidget = document.getElementById('course-assistant-widget');
+    if (!assistantWidget) return;
+
+    const toggleBtn = document.getElementById('assistant-toggle-btn');
+    const chatContainer = document.getElementById('assistant-chat-container');
+    const closeBtn = document.getElementById('assistant-close-btn');
+    const iframe = document.getElementById('assistant-iframe');
+
+    // Toggle assistant panel
+    function toggleAssistant() {
+        const isActive = chatContainer.classList.toggle('active');
+        toggleBtn.setAttribute('aria-expanded', isActive);
+        chatContainer.setAttribute('aria-hidden', !isActive);
+
+        // Lazy load the iframe source when opened for the first time
+        if (isActive && iframe && !iframe.getAttribute('src')) {
+            const src = iframe.getAttribute('data-src');
+            if (src) {
+                iframe.setAttribute('src', src);
+            }
+        }
+    }
+
+    // Close assistant panel
+    function closeAssistant() {
+        chatContainer.classList.remove('active');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        chatContainer.setAttribute('aria-hidden', 'true');
+    }
+
+    toggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleAssistant();
+    });
+
+    closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeAssistant();
+    });
+
+    // Close when clicking outside of the chat container or widget button
+    document.addEventListener('click', (e) => {
+        if (chatContainer.classList.contains('active') && 
+            !assistantWidget.contains(e.target)) {
+            closeAssistant();
+        }
+    });
+
+    // Handle escape key to close assistant
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && chatContainer.classList.contains('active')) {
+            closeAssistant();
+            toggleBtn.focus();
+        }
+    });
+});

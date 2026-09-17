@@ -1,0 +1,34 @@
+{
+   "criterios" : [
+      {
+         "adecuado" : "El entregable responde a una necesidad identificada del negocio o emprendimiento.",
+         "id" : "pertinencia",
+         "inicial" : "El entregable es genérico o no se relaciona con una necesidad concreta.",
+         "nombre" : "Pertinencia al negocio",
+         "solido" : "El entregable permite una decisión o mejora concreta y explica a quién beneficia."
+      },
+      {
+         "adecuado" : "La instrucción o técnica especifica tarea y contexto, pero omite restricciones o criterios de éxito.",
+         "id" : "cifrce",
+         "inicial" : "La instrucción o técnica es vaga y no permite reproducir el proceso.",
+         "nombre" : "Calidad del prompt CIFRCE o técnica aplicada",
+         "solido" : "La instrucción o técnica explicita contexto, tarea, formato, restricciones y criterios; se ajusta al tipo de actividad."
+      },
+      {
+         "adecuado" : "Se evitaron identificadores directos, pero los permisos y riesgos requieren una revisión adicional.",
+         "id" : "privacidad",
+         "inicial" : "Se exponen datos personales o material de terceros sin autorización.",
+         "nombre" : "Privacidad y ética",
+         "solido" : "Se usan datos ficticios o anonimizados, permisos cuando corresponda y transparencia sobre IA."
+      },
+      {
+         "adecuado" : "Hay revisión humana y algún soporte del proceso, aunque no permite comprobar todos los supuestos.",
+         "id" : "supervision",
+         "inicial" : "Se acepta la salida de IA sin comprobar cálculos, fuentes ni conservar evidencia.",
+         "nombre" : "Supervisión humana y evidencia verificable",
+         "solido" : "Se contrastan cálculos, fuentes y riesgos, y se conserva evidencia suficiente para reconstruir el resultado."
+      }
+   ],
+   "id" : "rubrica-semanal",
+   "titulo" : "Antes de avanzar, revise su evidencia con estos criterios"
+}

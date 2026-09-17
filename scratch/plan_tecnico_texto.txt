@@ -1,0 +1,2066 @@
+ 
+  
+
+
+
+           PLAN TÉCNICO DE DESARROLLO   
+
+
+
+        Sitio web de prueba de concepto para la Caja de Herramientas para Emprendedores y MiPYMES   
+
+
+
+         Documento de alcance, arquitectura, gobernanza y hoja de ruta   Antes del inicio de programación                         
+
+       Instituciones responsables   
+
+
+
+    Iniciativa del Centro de Investigación Observatorio del Desarrollo (CIOdD) de la Universidad de Costa Rica, con el apoyo de DIPROVID-UCR. Público meta: personas emprendedoras de micro y pequeñas empresas de Costa Rica.      
+
+
+
+   
+
+
+
+        Versión 0.1 · Documento para validación de alcance · Julio de 2026   
+
+    
+
+
+
+
+
+   1. Resumen ejecutivo   
+
+  El proyecto consiste en construir una experiencia web educativa autogestionada, desplegada inicialmente como prueba de concepto en GitHub Pages. El sitio transformará el diseño curricular de 19 semanas en una interfaz navegable, responsiva y accesible, con contenidos estructurados por módulos, semanas y capas pedagógicas. No se desarrollará un backend completo, sistema de matrícula, autenticación institucional ni almacenamiento central de entregables en esta etapa.                         
+
+       Conclusión preliminar de complejidad   
+
+
+
+    La complejidad funcional es media-alta por el volumen y la diversidad de contenidos, pero la complejidad de infraestructura puede mantenerse baja mediante una arquitectura estática basada en HTML, CSS y JavaScript, con contenido desacoplado en Markdown o JSON. El principal reto no es el backend: es diseñar una arquitectura de contenidos sostenible, navegación clara, persistencia local, componentes reutilizables y una disciplina de documentación que permita trabajo coordinado entre personas y modelos de IA.      
+
+
+
+   
+
+  El diseño curricular define seis bloques: Fundamentos y los módulos A-E. Cada semana sigue una secuencia recurrente: logro, introducción, teoría, video, tarea con prompt CIFRCE, actividad complementaria y Chispa de Innovación. Esta repetición es favorable para un sistema de componentes y plantillas. Sin embargo, el documento incluye aproximadamente 48 páginas, 19 semanas, múltiples tipos de actividades, referencias, avisos de privacidad y vínculos con GPTs especializados, por lo que no conviene codificar cada página manualmente.   
+
+
+
+
+
+   2. Base documental y lectura preliminar   
+
+  La valoración se basa en el archivo “diseno_curricular_toolkit_v23.docx”, que establece la estructura del programa, los contenidos semanales, las actividades, los entregables, la lógica de GPTs personalizados y las fuentes conceptuales. El documento prevé cerca de 76 horas de estudio distribuidas en 19 semanas y una carga estimada de 3 a 4 horas por semana.                                
+
+
+
+         Bloque                
+
+
+
+         Semanas                
+
+
+
+         Función en el sitio                 
+
+
+
+       Fundamentos               
+
+
+
+       2               
+
+
+
+       Configuración segura de ChatGPT, Proyectos y modelo CIFRCE.                 
+
+
+
+       Módulo A               
+
+
+
+       5               
+
+
+
+       Validación de demanda, cliente, encuesta, modelo y decisión de pivote.                 
+
+
+
+       Módulo B               
+
+
+
+       2               
+
+
+
+       FODA dinámico y plan de acción de 90 días.                 
+
+
+
+       Módulo C               
+
+
+
+       3               
+
+
+
+       Procesos, atención al cliente y documentación operativa.                 
+
+
+
+       Módulo D               
+
+
+
+       4               
+
+
+
+       Marca, precios, redes sociales y campañas AIDA.                 
+
+
+
+       Módulo E               
+
+
+
+       3               
+
+
+
+       Costos, prefactibilidad y escalamiento.      
+
+
+
+   
+
+  La estructura semanal es suficientemente regular para construir una plantilla única con variaciones de contenido. Esto reduce duplicación de código y permite que el equipo edite textos sin modificar la lógica de la aplicación.   
+
+
+
+
+
+   3. Alcance propuesto para la prueba de concepto   
+
+
+
+
+
+   3.1 Incluido   
+
+
+
+
+
+   Página de inicio institucional y presentación del programa.   
+
+
+
+
+
+   Ruta curricular visual con seis bloques y 19 semanas.   
+
+
+
+
+
+   Páginas o vistas de semana construidas desde datos estructurados.   
+
+
+
+
+
+   Navegación anterior/siguiente y menú de módulos.   
+
+
+
+
+
+   Componentes para logro, teoría, video, tarea CIFRCE, actividad, entregable, ayuda y Chispa de Innovación.   
+
+
+
+
+
+   Copiado de prompts al portapapeles y descarga o impresión de actividades cuando resulte pertinente.   
+
+
+
+
+
+   Marcado de avance y persistencia local en el navegador mediante localStorage.   
+
+
+
+
+
+   Indicador de progreso general, por módulo y por semana.   
+
+
+
+
+
+   Diseño responsivo para teléfono, tableta y computadora.   
+
+
+
+
+
+   Accesibilidad básica: semántica HTML, navegación por teclado, contraste, foco visible y textos alternativos.   
+
+
+
+
+
+   Gestión de contenidos con Markdown y/o JSON, sin base de datos.   
+
+
+
+
+
+   Despliegue automatizado en GitHub Pages.   
+
+
+
+
+
+   Bitácora de cambios y documentación operativa para continuidad entre Antigravity, Claude y otras personas colaboradoras.   
+
+
+
+
+
+   3.2 Fuera de alcance en esta etapa   
+
+
+
+
+
+   Autenticación de personas usuarias, perfiles y recuperación de contraseña.   
+
+
+
+
+
+   Matrícula, gestión de cohortes o roles de mediación.   
+
+
+
+
+
+   Base de datos centralizada y sincronización entre dispositivos.   
+
+
+
+
+
+   Recepción, almacenamiento o evaluación de entregables.   
+
+
+
+
+
+   Foros internos, mensajería o notificaciones.   
+
+
+
+
+
+   Analítica individual vinculada a identidad personal.   
+
+
+
+
+
+   Integración directa con API de OpenAI, WhatsApp, correo o sistemas UCR.   
+
+
+
+
+
+   Panel administrativo o CMS con edición desde navegador.   
+
+
+
+
+
+   Procesamiento de pagos, certificados verificables o transacciones sensibles.                         
+
+       Regla de alcance   
+
+
+
+    Toda funcionalidad que requiera identidad, almacenamiento central, permisos, secretos de API o procesamiento de datos personales debe tratarse como una fase posterior con backend y revisión institucional.      
+
+
+
+   
+
+
+
+
+
+   4. Personas usuarias y recorridos principales                                
+
+
+
+         Persona                
+
+
+
+         Necesidad                
+
+
+
+         Recorrido esperado                 
+
+
+
+       Emprendedor/a principiante               
+
+
+
+       Orientación clara, lenguaje simple y pasos pequeños.               
+
+
+
+       Inicio → diagnóstico de ruta → módulo → semana → actividad → marcar avance.                 
+
+
+
+       Negocio en operación               
+
+
+
+       Aplicación directa y acceso rápido a herramientas.               
+
+
+
+       Módulo relevante → semana → copiar prompt → aplicar → volver y registrar avance.                 
+
+
+
+       Persona con baja confianza digital               
+
+
+
+       Interfaz predecible, ayuda contextual y pocos controles.               
+
+
+
+       Tutorial inicial → navegación lineal → instrucciones visibles → confirmaciones.                 
+
+
+
+       Equipo productor               
+
+
+
+       Actualizar contenidos sin tocar la aplicación.               
+
+
+
+       Editar Markdown/JSON → validar → commit → revisión → despliegue.                 
+
+
+
+       Modelo de IA colaborador               
+
+
+
+       Contexto técnico persistente y tareas acotadas.               
+
+
+
+       Leer README/estado/bitácora → revisar estructura → ejecutar tarea → actualizar documentación.      
+
+
+
+   
+
+
+
+
+
+   5. Mapa funcional del sitio                                
+
+
+
+         Área                
+
+
+
+         Componentes                
+
+
+
+         Prioridad PoC                 
+
+
+
+       Inicio               
+
+
+
+       Presentación, instituciones, beneficios, duración, llamada a comenzar.               
+
+
+
+       Alta                 
+
+
+
+       Ruta del programa               
+
+
+
+       Mapa de módulos, estado de avance, accesos a semanas.               
+
+
+
+       Alta                 
+
+
+
+       Vista semanal               
+
+
+
+       Capas pedagógicas, video, prompt, actividad y entregable.               
+
+
+
+       Crítica                 
+
+
+
+       Herramientas               
+
+
+
+       Copiar prompt, imprimir, reiniciar progreso, ayuda.               
+
+
+
+       Alta                 
+
+
+
+       Progreso               
+
+
+
+       Completado local, porcentaje, última semana visitada.               
+
+
+
+       Alta                 
+
+
+
+       Recursos               
+
+
+
+       Glosario, seguridad, privacidad, metodología CIFRCE.               
+
+
+
+       Media                 
+
+
+
+       GPTs especializados               
+
+
+
+       Tarjetas y enlaces externos cuando estén disponibles.               
+
+
+
+       Media                 
+
+
+
+       Créditos y legal               
+
+
+
+       CIOdD, DIPROVID, UCR, privacidad, alcance educativo.               
+
+
+
+       Alta                 
+
+
+
+       Búsqueda               
+
+
+
+       Búsqueda local por títulos y palabras clave.               
+
+
+
+       Deseable      
+
+
+
+   
+
+
+
+
+
+   6. Arquitectura de información y contenidos   
+
+  Se recomienda separar presentación, lógica y contenido. El contenido curricular debe almacenarse como archivos legibles y versionables; el JavaScript se encargará de cargarlo y transformarlo en componentes visuales.   
+
+
+
+
+
+   6.1 Jerarquía de información   
+
+
+
+
+
+   Programa   
+
+
+
+
+
+   Bloque o módulo   
+
+
+
+
+
+   Semana   
+
+
+
+
+
+   Pantalla o sección pedagógica   
+
+
+
+
+
+   Actividad   
+
+
+
+
+
+   Recurso o referencia   
+
+
+
+
+
+   6.2 Modelo de datos mínimo por semana                                
+
+
+
+         Campo                
+
+
+
+         Tipo                
+
+
+
+         Ejemplo de uso                 
+
+
+
+       id               
+
+
+
+       cadena               
+
+
+
+       a-1                 
+
+
+
+       moduleId               
+
+
+
+       cadena               
+
+
+
+       modulo-a                 
+
+
+
+       order               
+
+
+
+       número               
+
+
+
+       3                 
+
+
+
+       title               
+
+
+
+       cadena               
+
+
+
+       Tendencias de mercado                 
+
+
+
+       achievement               
+
+
+
+       cadena               
+
+
+
+       Logro de la semana                 
+
+
+
+       intro               
+
+
+
+       Markdown               
+
+
+
+       Texto introductorio                 
+
+
+
+       theory               
+
+
+
+       arreglo               
+
+
+
+       Una o dos pantallas teóricas                 
+
+
+
+       videos               
+
+
+
+       arreglo               
+
+
+
+       Título, duración y URL                 
+
+
+
+       prompt               
+
+
+
+       objeto               
+
+
+
+       Contexto, instrucción, formato, restricciones y criterios                 
+
+
+
+       activity               
+
+
+
+       objeto               
+
+
+
+       Tipo, consigna y entregable                 
+
+
+
+       innovation               
+
+
+
+       arreglo               
+
+
+
+       Consejos de innovación                 
+
+
+
+       specializedGPT               
+
+
+
+       objeto opcional               
+
+
+
+       Nombre, nota y vínculo                 
+
+
+
+       references               
+
+
+
+       arreglo               
+
+
+
+       Fuentes de la semana      
+
+
+
+   
+
+
+
+
+
+   6.3 Recomendación de formato   
+
+  Usar Markdown para textos largos y JSON para metadatos, navegación y estructuras repetibles. Esta combinación facilita lectura humana, control de versiones y procesamiento automático. Una alternativa es mantener cada semana en un archivo Markdown con front matter; deberá decidirse en la fase de prototipo técnico.   
+
+
+
+
+
+   7. Arquitectura técnica recomendada   
+
+  Para la prueba de concepto se recomienda una aplicación web estática progresiva, sin framework pesado en la primera iteración. GitHub Pages publica archivos HTML, CSS y JavaScript desde un repositorio y permite incorporar un proceso de construcción con GitHub Actions. Esta plataforma es adecuada para una experiencia educativa sin datos sensibles ni transacciones.                                
+
+
+
+         Capa                
+
+
+
+         Tecnología propuesta                
+
+
+
+         Responsabilidad                 
+
+
+
+       Estructura               
+
+
+
+       HTML5 semántico               
+
+
+
+       Encabezados, navegación, secciones, formularios locales y accesibilidad.                 
+
+
+
+       Presentación               
+
+
+
+       CSS modular + variables               
+
+
+
+       Sistema visual, responsive, estados, impresión y componentes.                 
+
+
+
+       Interacción               
+
+
+
+       JavaScript ES modules               
+
+
+
+       Enrutamiento, carga de contenido, progreso, copiar y búsqueda.                 
+
+
+
+       Contenido               
+
+
+
+       Markdown + JSON               
+
+
+
+       Textos, prompts, actividades, referencias y metadatos.                 
+
+
+
+       Persistencia               
+
+
+
+       localStorage               
+
+
+
+       Progreso y preferencias sin enviar datos a servidor.                 
+
+
+
+       Construcción               
+
+
+
+       Node.js opcional               
+
+
+
+       Conversión de Markdown, validación y generación de índices.                 
+
+
+
+       Calidad               
+
+
+
+       ESLint/Prettier + validadores               
+
+
+
+       Consistencia de código y contenidos.                 
+
+
+
+       Despliegue               
+
+
+
+       GitHub Actions + Pages               
+
+
+
+       Publicación automática desde la rama principal.      
+
+
+
+                         
+
+       Decisión arquitectónica sugerida   
+
+
+
+    Comenzar con una “multi-page application generada” o una SPA ligera con hash routing. No adoptar React/Vue en la primera fase salvo que la auditoría del sitio previo demuestre una ventaja concreta. El objetivo es reducir dependencias y facilitar mantenimiento por equipos mixtos y agentes de IA.      
+
+
+
+   
+
+
+
+
+
+   8. Interacciones de frontend previstas                                
+
+
+
+         Interacción                
+
+
+
+         Implementación                
+
+
+
+         Observación                 
+
+
+
+       Expandir teoría               
+
+
+
+       Acordeón accesible o navegación por pantallas               
+
+
+
+       No ocultar información esencial a lectores de pantalla.                 
+
+
+
+       Copiar prompt               
+
+
+
+       Clipboard API con alternativa manual               
+
+
+
+       Mostrar confirmación visual y textual.                 
+
+
+
+       Marcar completado               
+
+
+
+       Checkbox/botón + localStorage               
+
+
+
+       Permitir desmarcar y reiniciar.                 
+
+
+
+       Progreso               
+
+
+
+       Cálculo local por semanas/secciones               
+
+
+
+       No presentar como certificación.                 
+
+
+
+       Continuar               
+
+
+
+       Guardar última ruta visitada               
+
+
+
+       Botón visible en inicio.                 
+
+
+
+       Buscar               
+
+
+
+       Índice JSON local               
+
+
+
+       Sin motor externo en PoC.                 
+
+
+
+       Imprimir actividad               
+
+
+
+       CSS @media print               
+
+
+
+       Excluir navegación y elementos decorativos.                 
+
+
+
+       Vídeo               
+
+
+
+       Embed responsivo o enlace               
+
+
+
+       Incluir transcripción o resumen.                 
+
+
+
+       Avisos               
+
+
+
+       Banners y callouts               
+
+
+
+       Privacidad, ayuda y alcance educativo.      
+
+
+
+   
+
+
+
+
+
+   9. Estructura propuesta del repositorio   
+
+     Estructura inicial de referencia:   
+
+
+
+
+
+       /   ├── index.html   ├── 404.html   ├── README.md   ├── CHANGELOG.md   ├── PROJECT_STATUS.md   ├── CONTRIBUTING.md   ├── AGENTS.md   ├── package.json                 # solo si existe proceso de build   ├── src/   │   ├── css/   │   │   ├── tokens.css   │   │   ├── base.css   │   │   ├── layout.css   │   │   ├── components.css   │   │   └── print.css   │   ├── js/   │   │   ├── app.js   │   │   ├── router.js   │   │   ├── content-loader.js   │   │   ├── progress-store.js   │   │   └── components/   │   └── templates/   ├── content/   │   ├── program.json   │   ├── modules/   │   ├── weeks/   │   ├── glossary.md   │   └── references.json   ├── public/   │   ├── images/   │   ├── icons/   │   └── documents/   ├── docs/   │   ├── architecture.md   │   ├── content-model.md   │   ├── design-system.md   │   ├── decisions/   │   └── qa-checklist.md   ├── scripts/   │   ├── validate-content.js   │   └── build-search-index.js   └── .github/workflows/deploy-pages.yml   
+
+
+
+
+
+   10. Gobernanza del trabajo con modelos de IA   
+
+  La continuidad entre Antigravity, Claude y personas desarrolladoras depende de que el estado real del proyecto viva en el repositorio, no en la memoria de una conversación. Cada sesión debe comenzar leyendo archivos de orientación y terminar actualizándolos.                                
+
+
+
+         Archivo                
+
+
+
+         Propósito                
+
+
+
+         Regla de actualización                 
+
+
+
+       README.md               
+
+
+
+       Instalación, ejecución, arquitectura resumida y despliegue.               
+
+
+
+       Cuando cambie el modo de operar el proyecto.                 
+
+
+
+       PROJECT_STATUS.md               
+
+
+
+       Estado actual, tarea en curso, bloqueos y siguiente paso.               
+
+
+
+       Al inicio y cierre de cada sesión relevante.                 
+
+
+
+       CHANGELOG.md               
+
+
+
+       Cambios visibles por versión.               
+
+
+
+       Con cada conjunto de cambios aceptado.                 
+
+
+
+       AGENTS.md               
+
+
+
+       Reglas para modelos: lectura obligatoria, comandos, convenciones y límites.               
+
+
+
+       Cuando cambien procesos o herramientas.                 
+
+
+
+       docs/decisions/               
+
+
+
+       Registros ADR de decisiones técnicas.               
+
+
+
+       Ante decisiones no triviales o difíciles de revertir.                 
+
+
+
+       CONTRIBUTING.md               
+
+
+
+       Flujo de ramas, commits, revisiones y criterios de aceptación.               
+
+
+
+       Cuando cambie la gobernanza.      
+
+
+
+   
+
+
+
+
+
+   10.1 Protocolo obligatorio por sesión   
+
+
+
+
+
+   Leer AGENTS.md, PROJECT_STATUS.md, CHANGELOG.md y el ADR más reciente.   
+
+
+
+
+
+   Inspeccionar git status y los últimos commits antes de modificar archivos.   
+
+
+
+
+
+   Declarar el alcance de la sesión y no mezclar tareas no relacionadas.   
+
+
+
+
+
+   Ejecutar validaciones y pruebas antes de cerrar.   
+
+
+
+
+
+   Actualizar PROJECT_STATUS.md con lo realizado, pendientes, riesgos y siguiente paso.   
+
+
+
+
+
+   Agregar una entrada a CHANGELOG.md cuando exista una mejora funcional o visual validada.   
+
+
+
+
+
+   Usar commits pequeños con mensajes descriptivos y no sobrescribir trabajo ajeno.   
+
+
+
+
+
+   10.2 Plantilla mínima de PROJECT_STATUS.md   
+
+
+
+
+
+       # Estado del proyecto   Última actualización: AAAA-MM-DD HH:MM   Responsable o agente: ...   Rama: ...    ## Estado actual   ## Cambios realizados   ## Archivos modificados   ## Pruebas ejecutadas   ## Decisiones tomadas   ## Bloqueos y riesgos   ## Próxima tarea recomendada   ## No modificar sin revisar   
+
+
+
+
+
+   11. Plan de desarrollo por fases                                 
+
+
+
+         Fase                
+
+
+
+         Objetivo                
+
+
+
+         Entregables                
+
+
+
+         Criterio de salida                 
+
+
+
+       0. Descubrimiento               
+
+
+
+       Validar alcance, auditar sitio previo y acordar decisiones.               
+
+
+
+       Plan aprobado, inventario de reutilización, mapa del sitio, ADR inicial.               
+
+
+
+       Alcance y arquitectura aprobados.                 
+
+
+
+       1. Base técnica               
+
+
+
+       Crear repositorio, estructura, sistema visual y despliegue.               
+
+
+
+       Shell del sitio, tokens CSS, navegación base, GitHub Pages.               
+
+
+
+       Inicio y una ruta vacía operativas.                 
+
+
+
+       2. Prototipo vertical               
+
+
+
+       Implementar una semana completa de punta a punta.               
+
+
+
+       Semana F-1 o A-1 con todos los componentes.               
+
+
+
+       Prueba con usuarios y ajustes aprobados.                 
+
+
+
+       3. Motor de contenidos               
+
+
+
+       Desacoplar contenido y generar vistas desde Markdown/JSON.               
+
+
+
+       Loader, esquema, validación y navegación.               
+
+
+
+       Agregar una semana sin tocar lógica.                 
+
+
+
+       4. Carga curricular               
+
+
+
+       Migrar las 19 semanas y recursos.               
+
+
+
+       Contenido completo, referencias, prompts y actividades.               
+
+
+
+       Revisión editorial concluida.                 
+
+
+
+       5. Interacciones               
+
+
+
+       Incorporar progreso, copiar, búsqueda, impresión y continuar.               
+
+
+
+       Funciones locales y estados de error.               
+
+
+
+       Pruebas funcionales superadas.                 
+
+
+
+       6. Calidad               
+
+
+
+       Accesibilidad, responsive, rendimiento y correcciones.               
+
+
+
+       Informe QA, checklist y versión candidata.               
+
+
+
+       Sin defectos críticos.                 
+
+
+
+       7. Piloto               
+
+
+
+       Publicar PoC, recopilar retroalimentación y priorizar fase 2.               
+
+
+
+       Versión piloto, hallazgos y backlog.               
+
+
+
+       Decisión sobre evolución y backend.      
+
+
+
+   
+
+
+
+
+
+   12. Dimensionamiento preliminar   
+
+  Las estimaciones deben validarse después de auditar el proyecto previo y definir el nivel de fidelidad visual. Se expresan como esfuerzo relativo, no como compromiso contractual.                                 
+
+
+
+         Frente                
+
+
+
+         Complejidad                
+
+
+
+         Esfuerzo relativo                
+
+
+
+         Factor dominante                 
+
+
+
+       Arquitectura y repositorio               
+
+
+
+       Media               
+
+
+
+       2-4 jornadas               
+
+
+
+       Decisiones, automatización y documentación.                 
+
+
+
+       Sistema visual y responsive               
+
+
+
+       Media-alta               
+
+
+
+       5-8 jornadas               
+
+
+
+       Número de componentes y reutilización del sitio previo.                 
+
+
+
+       Motor de contenidos               
+
+
+
+       Media               
+
+
+
+       4-7 jornadas               
+
+
+
+       Esquema, Markdown y validación.                 
+
+
+
+       Migración de contenidos               
+
+
+
+       Alta por volumen               
+
+
+
+       8-15 jornadas               
+
+
+
+       19 semanas, revisión y formatos.                 
+
+
+
+       Interacciones locales               
+
+
+
+       Media               
+
+
+
+       4-7 jornadas               
+
+
+
+       Progreso, búsqueda, impresión y estados.                 
+
+
+
+       Accesibilidad y QA               
+
+
+
+       Media-alta               
+
+
+
+       5-9 jornadas               
+
+
+
+       Dispositivos, teclado, contraste y contenido multimedia.                 
+
+
+
+       Documentación y gobierno               
+
+
+
+       Media               
+
+
+
+       2-4 jornadas               
+
+
+
+       Protocolos para colaboración humano-IA.      
+
+
+
+                         
+
+       Rango orientativo   
+
+
+
+    Un PoC completo y revisado puede requerir aproximadamente 30 a 54 jornadas técnicas/editoriales combinadas. Un prototipo vertical validable puede lograrse antes, en 8 a 15 jornadas, si se limita a la base del sitio, un módulo parcial y las interacciones esenciales.      
+
+
+
+   
+
+
+
+
+
+   13. Riesgos y mitigaciones                                
+
+
+
+         Riesgo                
+
+
+
+         Impacto                
+
+
+
+         Mitigación                 
+
+
+
+       Codificar las 19 semanas manualmente               
+
+
+
+       Alto               
+
+
+
+       Contenido desacoplado, plantillas y validación automática.                 
+
+
+
+       Deriva entre diseño curricular y sitio               
+
+
+
+       Alto               
+
+
+
+       Matriz de trazabilidad semana-componente-entregable.                 
+
+
+
+       Cambios de varios agentes sin contexto               
+
+
+
+       Alto               
+
+
+
+       AGENTS.md, PROJECT_STATUS.md, ADR y commits pequeños.                 
+
+
+
+       Persistencia local interpretada como cuenta               
+
+
+
+       Medio               
+
+
+
+       Mensaje claro: avance guardado solo en este navegador.                 
+
+
+
+       Pérdida de progreso al limpiar navegador               
+
+
+
+       Medio               
+
+
+
+       Opción de exportar/importar progreso como JSON en fase deseable.                 
+
+
+
+       Contenido demasiado denso en móvil               
+
+
+
+       Alto               
+
+
+
+       Diseño por capas, lectura progresiva y pruebas con público meta.                 
+
+
+
+       Videos o enlaces no disponibles               
+
+
+
+       Medio               
+
+
+
+       Estados alternativos, transcripción y enlaces comprobados.                 
+
+
+
+       Datos personales en ejercicios               
+
+
+
+       Alto               
+
+
+
+       Avisos de anonimización y no almacenamiento central.                 
+
+
+
+       Dependencias excesivas               
+
+
+
+       Medio               
+
+
+
+       Vanilla JS o dependencias mínimas y bloqueadas por versión.                 
+
+
+
+       GitHub Pages excede el propósito del PoC               
+
+
+
+       Medio               
+
+
+
+       No usar transacciones ni datos sensibles; definir ruta de migración futura.      
+
+
+
+   
+
+
+
+
+
+   14. Criterios de aceptación del PoC   
+
+
+
+
+
+   Las 19 semanas se pueden navegar desde un mapa curricular coherente.   
+
+
+
+
+
+   Cada semana presenta sus capas en el orden definido por el diseño curricular.   
+
+
+
+
+
+   Los prompts conservan Contexto, Instrucción, Formato, Restricciones y Criterios de éxito cuando corresponda.   
+
+
+
+
+
+   Una persona puede marcar avance y recuperarlo al volver desde el mismo navegador.   
+
+
+
+
+
+   El sitio funciona en anchos móviles y de escritorio sin desbordamientos horizontales.   
+
+
+
+
+
+   Todas las funciones esenciales son utilizables con teclado.   
+
+
+
+
+
+   Los textos, botones y estados cumplen contraste y foco visible.   
+
+
+
+
+
+   Una semana nueva puede agregarse modificando contenido, sin duplicar una página HTML completa.   
+
+
+
+
+
+   Cada cambio significativo queda registrado en CHANGELOG.md y PROJECT_STATUS.md.   
+
+
+
+
+
+   El despliegue se ejecuta automáticamente tras integrar cambios aprobados en la rama principal.   
+
+
+
+
+
+   No se recopilan datos personales ni se envía información a un servidor propio.   
+
+
+
+
+
+   15. Auditoría posterior del sitio previo   
+
+  Después de validar este plan se realizará una auditoría específica del sitio existente indicado por el equipo. El propósito será reutilizar decisiones útiles sin arrastrar deuda técnica o estructuras incompatibles con el nuevo modelo curricular.                                
+
+
+
+         Dimensión                
+
+
+
+         Qué revisar                
+
+
+
+         Salida                 
+
+
+
+       Identidad visual               
+
+
+
+       Paleta, tipografía, iconografía, composición y uso institucional.               
+
+
+
+       Inventario: reutilizar, adaptar o descartar.                 
+
+
+
+       Componentes               
+
+
+
+       Tarjetas, navegación, acordeones, modales, botones y layouts.               
+
+
+
+       Biblioteca preliminar de componentes.                 
+
+
+
+       Arquitectura               
+
+
+
+       Estructura de carpetas, dependencias, rutas y generación de contenido.               
+
+
+
+       Mapa técnico y deuda identificada.                 
+
+
+
+       Contenido               
+
+
+
+       Textos, imágenes, videos, guías y actividades recuperables.               
+
+
+
+       Matriz de migración y derechos de uso.                 
+
+
+
+       Accesibilidad               
+
+
+
+       Semántica, teclado, contraste, responsive y multimedia.               
+
+
+
+       Brechas y acciones correctivas.                 
+
+
+
+       Rendimiento               
+
+
+
+       Peso, solicitudes, imágenes y scripts.               
+
+
+
+       Línea base de rendimiento.                 
+
+
+
+       Licencias               
+
+
+
+       Fuentes, imágenes, librerías y atribuciones.               
+
+
+
+       Lista de activos autorizados.      
+
+
+
+                         
+
+       Condición para reutilizar   
+
+
+
+    Un elemento del sitio previo se reutilizará solamente si: responde al nuevo flujo curricular, es accesible, puede mantenerse, tiene autorización de uso y reduce esfuerzo total. La similitud visual por sí sola no es suficiente.      
+
+
+
+   
+
+
+
+
+
+   16. Decisiones que deben validarse antes de programar   
+
+
+
+
+
+   ¿El PoC será una SPA ligera, un sitio multipágina generado o una combinación?   
+
+
+
+
+
+   ¿El contenido se mantendrá en Markdown con front matter o en JSON más Markdown?   
+
+
+
+
+
+   ¿Se requiere un diagnóstico inicial que recomiende una ruta o todas las personas siguen el orden completo?   
+
+
+
+
+
+   ¿El avance se marcará por semana o también por cada capa interna?   
+
+
+
+
+
+   ¿Los videos se alojarán en YouTube, Vimeo, UCR u otra plataforma?   
+
+
+
+
+
+   ¿Los GPTs especializados se enlazarán desde el sitio y cuáles estarán disponibles en el piloto?   
+
+
+
+
+
+   ¿Qué lineamientos de identidad visual institucional deben aplicarse?   
+
+
+
+
+
+   ¿Se requiere español inclusivo, tratamiento de “usted” y reglas editoriales adicionales?   
+
+
+
+
+
+   ¿Qué navegadores y dispositivos se consideran mínimos?   
+
+
+
+
+
+   ¿Se incorporará una exportación local de progreso en el PoC o se pospone?   
+
+
+
+
+
+   17. Próximos pasos recomendados                                
+
+
+
+         Paso                
+
+
+
+         Actividad                
+
+
+
+         Resultado                 
+
+
+
+       1               
+
+
+
+       Revisar y aprobar este documento, especialmente incluidos, excluidos y decisiones abiertas.               
+
+
+
+       Alcance base aprobado.                 
+
+
+
+       2               
+
+
+
+       Obtener acceso al repositorio o código fuente del sitio previo y ejecutar auditoría.               
+
+
+
+       Matriz de reutilización.                 
+
+
+
+       3               
+
+
+
+       Definir mapa del sitio y wireframes de inicio, ruta curricular y semana.               
+
+
+
+       Flujos y pantallas validados.                 
+
+
+
+       4               
+
+
+
+       Elegir formato de contenidos y redactar esquema técnico.               
+
+
+
+       Contrato de datos estable.                 
+
+
+
+       5               
+
+
+
+       Construir prototipo vertical con una sola semana representativa.               
+
+
+
+       Validación temprana antes de migrar todo.                 
+
+
+
+       6               
+
+
+
+       Probar con un grupo pequeño de emprendedores y ajustar.               
+
+
+
+       Hallazgos de usabilidad.                 
+
+
+
+       7               
+
+
+
+       Autorizar la producción de la base técnica y migración progresiva.               
+
+
+
+       Inicio formal de desarrollo.      
+
+
+
+   
+
+
+
+
+
+   Anexo A. Definición de terminado para cada tarea   
+
+
+
+
+
+   El código cumple las convenciones y no introduce errores en consola.   
+
+
+
+
+
+   El componente funciona con teclado, mouse y pantalla táctil.   
+
+
+
+
+
+   Existe estado vacío, error o alternativa cuando aplica.   
+
+
+
+
+
+   La vista se revisó en móvil y escritorio.   
+
+
+
+
+
+   El contenido coincide con la fuente curricular aprobada.   
+
+
+
+
+
+   Las pruebas o verificaciones ejecutadas están registradas.   
+
+
+
+
+
+   PROJECT_STATUS.md y CHANGELOG.md fueron actualizados.   
+
+
+
+
+
+   El commit contiene una sola unidad lógica y un mensaje comprensible.   
+
+
+
+
+
+   Anexo B. Fuentes técnicas y documentales   
+
+  1. CIOdD-UCR y DIPROVID. Diseño curricular y guía de producción: Caja de Herramientas para Emprendedores y MiPYMES, versión 2.3, julio de 2026.   
+
+  2. GitHub Docs. What is GitHub Pages? Servicio de alojamiento estático para HTML, CSS y JavaScript publicados desde un repositorio.   
+
+  3. GitHub Docs. Configuring a publishing source / Using custom workflows with GitHub Pages. Publicación desde rama o mediante GitHub Actions.   
+
+  4. GitHub Docs. GitHub Pages limits. Límites de tamaño, construcción, ancho de banda y restricción para transacciones sensibles.     
+
+
+
+     

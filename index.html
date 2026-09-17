@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caja de Herramientas IA para MiPYME | UCR</title>
+
+    <script src="assets/js/redirect.js"></script>
+
+    <!-- Security Meta Tags -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-src 'self' https://www.chatbase.co https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'none';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Caja de Herramientas de Inteligencia Artificial para la MiPYME. Un programa práctico de la UCR (CIOdD / DIPROVID) y AUGE para impulsar la adopción estratégica de la IA.">
+    <meta name="keywords" content="Inteligencia Artificial, Pymes, MiPYME, UCR, Universidad de Costa Rica, Auge, Innovación, Automatización, No-code, Prompt Engineering">
+    <link rel="canonical" href="https://agmelendez.github.io/cajapymeia_ciodd/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agmelendez.github.io/cajapymeia_ciodd/">
+    <meta property="og:title" content="Caja de Herramientas IA para MiPYME | UCR">
+    <meta property="og:description" content="Acelere su negocio con IA. Un programa práctico de la Universidad de Costa Rica y el Programa Auge para el desarrollo empresarial.">
+    <meta property="og:image" content="https://agmelendez.github.io/cajapymeia_ciodd/logos/ucr.png">
+    <meta property="og:locale" content="es_ES">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://agmelendez.github.io/cajapymeia_ciodd/">
+    <meta name="twitter:title" content="Caja de Herramientas IA para MiPYME | UCR">
+    <meta name="twitter:description" content="Acelere su negocio con IA. Un programa práctico de la Universidad de Costa Rica y el Programa Auge para el desarrollo empresarial.">
+    <meta name="twitter:image" content="https://agmelendez.github.io/cajapymeia_ciodd/logos/ucr.png">
+
+    <!-- License & Rights Meta Tags -->
+    <meta name="rights" content="Creative Commons Attribution 4.0 International (CC BY 4.0)">
+    <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+    <meta name="dc.rights" content="Creative Commons Attribution 4.0 International (CC BY 4.0)">
+    <meta name="dc.creator" content="Universidad de Costa Rica (CIOdD / DIPROVID) - Programa Auge">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/tokens.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/componentes.css">
+    <link rel="stylesheet" href="assets/css/unidades.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+    <header role="banner">
+        <div class="nav-container">
+            <div class="logo-box">
+                <img src="logos/ucr.png" alt="Logo Oficial de la Universidad de Costa Rica (UCR)" class="logo-img">
+                <div class="divider-vertical"></div>
+                <img src="logos/ciodd.png" alt="Logo del Centro de Investigación en Observación y Difusión Digital (CIOdD)" class="logo-img">
+                <div class="divider-vertical"></div>
+                <img src="logos/diprovid.png" alt="Logo de la Dirección de Promoción de la Vinculación para el Desarrollo (DIPROVID)" class="logo-img">
+            </div>
+            <div class="header-academic-tag" style="font-size: 0.8rem; color: #666; font-weight: 600; font-family: 'Montserrat', sans-serif; display: inline-block; margin-right: 15px;">
+                UCR | CIOdD - DIPROVID
+            </div>
+        </div>
+    </header>
+
+    <div class="page-layout">
+        <!-- Barra lateral de navegación izquierda -->
+        <aside class="sidebar" id="sidebar" role="navigation" aria-label="Menú de navegación del programa">
+            <button class="sidebar-close-btn" id="sidebar-close-btn" aria-label="Cerrar navegación">&times;</button>
+            <h3 class="sidebar-title">Menú del Programa</h3>
+            <ul class="sidebar-menu">
+                <li class="sidebar-item">
+                    <a href="#/inicio" class="sidebar-link active"><i class="fas fa-home"></i> Inicio</a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#/diagnostico" class="sidebar-link"><i class="fas fa-compass"></i> Módulo 0: Diagnóstico</a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#/modulo/m1" class="sidebar-link"><i class="fas fa-chart-line"></i> Módulo I: Diagnóstico con IA</a>
+                    <ul class="sidebar-submenu">
+                        <li><a href="#/semana/s1" class="sidebar-sublink">S-1: Seguridad y LLMs</a></li>
+                        <li><a href="#/semana/s2" class="sidebar-sublink">S-2: Prompts CIFRCE</a></li>
+                        <li><a href="#/semana/s3" class="sidebar-sublink">S-3: FODA y Clientes</a></li>
+                        <li><a href="#/semana/s4" class="sidebar-sublink">S-4: Plan de Acción 90D</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#/modulo/m2" class="sidebar-link"><i class="fas fa-cogs"></i> Módulo II: Automatización</a>
+                    <ul class="sidebar-submenu">
+                        <li><a href="#/semana/s5" class="sidebar-sublink">S-5: No-Code Make/n8n</a></li>
+                        <li><a href="#/semana/s6" class="sidebar-sublink">S-6: Chatbots y WhatsApp</a></li>
+                        <li><a href="#/semana/s7" class="sidebar-sublink">S-7: CRM y Privacidad</a></li>
+                        <li><a href="#/semana/s8" class="sidebar-sublink">S-8: Retorno de Inversión</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#/modulo/m3" class="sidebar-link"><i class="fas fa-bullhorn"></i> Módulo III: Comercialización</a>
+                    <ul class="sidebar-submenu">
+                        <li><a href="#/semana/s9" class="sidebar-sublink">S-9: Identidad y Canva</a></li>
+                        <li><a href="#/semana/s10" class="sidebar-sublink">S-10: Producción Audiovisual</a></li>
+                        <li><a href="#/semana/s11" class="sidebar-sublink">S-11: Prefactibilidad</a></li>
+                        <li><a href="#/semana/s12" class="sidebar-sublink">S-12: Campaña AIDA</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#/gpts" class="sidebar-link"><i class="fas fa-robot"></i> Lógica de GPTs</a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#/portafolio" class="sidebar-link"><i class="fas fa-folder-open"></i> Portafolio</a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#/credenciales" class="sidebar-link"><i class="fas fa-medal"></i> Credenciales</a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#/biblioteca" class="sidebar-link"><i class="fas fa-book"></i> Biblioteca de Recursos</a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#/evaluador" class="sidebar-link"><i class="fas fa-user-shield"></i> Espacio del Evaluador</a>
+                </li>
+            </ul>
+        </aside>
+        
+        <!-- Backdrop para móvil -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+        <main class="main-content" id="main-content">
+            <!-- Dynamic Application Container -->
+            <div id="app"></div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-logo">
+            <h4>Universidad de Costa Rica</h4>
+            <p style="opacity: 0.8;">Centro de Investigación Observatorio del Desarrollo (CIOdD) | DIPROVID</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="https://ciodd.ucr.ac.cr" target="_blank" rel="noopener noreferrer">Web CIOdD</a> |
+            <a href="https://diprovid.ucr.ac.cr/" target="_blank" rel="noopener noreferrer">Web DIPROVID</a> |
+            <a href="https://www.ucr.ac.cr" target="_blank" rel="noopener noreferrer">Web UCR</a> |
+            <a href="politicas/licencia.html">Licencia CC BY 4.0</a> |
+            <a href="politicas/procedimiento-acreditacion.html">Procedimiento de Acreditación (25 Horas)</a> |
+            <a href="https://youtu.be/K8hUCRl7Qww?si=nqYbCfm9MdNchZ70" target="_blank" rel="noopener noreferrer" style="color: #fca5a5;"><i class="fab fa-youtube"></i> Video Oficial del Curso</a>
+        </div>
+
+        <!-- Creative Commons Attribution 4.0 International License Section -->
+        <div class="footer-license" role="region" aria-label="Información de Licencia de Uso">
+            <a class="footer-license-badge" href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank" rel="license noopener noreferrer" aria-label="Ver Licencia Creative Commons Atribución 4.0 Internacional">
+                <img src="logos/cc-by.svg" alt="Creative Commons Atribución 4.0 Internacional (CC BY 4.0)" width="120" height="42">
+            </a>
+            <p class="footer-license-text">
+                Esta obra y sus contenidos están bajo una <a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank" rel="license noopener noreferrer">Licencia Creative Commons Atribución 4.0 Internacional (CC BY 4.0)</a>.<br>
+                Usted es libre de compartir y adaptar el material para cualquier propósito, incluso comercialmente, siempre que otorgue el <a href="politicas/licencia.html">crédito correspondiente</a> a la <strong>Universidad de Costa Rica (CIOdD – DIPROVID)</strong> y al <strong>Programa Auge</strong>.
+            </p>
+        </div>
+
+        <div class="copyright">
+            © 2025–2026 Universidad de Costa Rica | CIOdD – DIPROVID | Colaboración: Programa Auge (UCR)<br>Proyecto de Acción Social ED-3698
+        </div>
+    </footer>
+
+    <!-- Lightbox for Infographics -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span id="lightbox-close" class="lightbox-close">&times;</span>
+            <img id="lightbox-img" class="lightbox-img" src="" alt="Infografía Completa">
+            <div class="lightbox-controls">
+                <a id="lightbox-download" class="lightbox-download" href="" download>
+                    <i class="fas fa-download"></i> Descargar Infografía
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botón flotante hamburguesa para móviles -->
+    <button class="sidebar-toggle-btn" id="sidebar-toggle-btn" aria-label="Abrir menú de navegación">
+        <i class="fas fa-bars"></i>
+    </button>
+    <script src="assets/js/router.js"></script>
+    <script src="assets/js/estado.js"></script>
+    <script src="assets/js/clasificador.js"></script>
+    <script src="assets/js/renderInicio.js"></script>
+    <script src="assets/js/renderModulo.js"></script>
+    <script src="assets/js/renderSemana.js"></script>
+    <script src="assets/js/renderUnidad.js"></script>
+    <script src="assets/js/renderPortafolio.js"></script>
+    <script src="assets/js/renderBiblioteca.js"></script>
+    <script src="assets/js/renderCredenciales.js"></script>
+    <script src="assets/js/renderRuta.js"></script>
+    <script src="assets/js/renderEvaluador.js"></script>
+    <script src="assets/js/renderGpts.js"></script>
+    <script src="assets/js/diagnostico.js"></script>
+    <script src="assets/js/contenidoData.js"></script>
+    <script src="assets/js/app.js"></script>
+
+    <!-- Chatbase Course Assistant Widget (Superior y Llamativo) -->
+    <div id="course-assistant-widget" class="course-assistant-widget">
+        <!-- Floating Action Button (Circular Superior con Símbolo de Ayuda) -->
+        <button id="assistant-toggle-btn" class="assistant-toggle-btn" aria-expanded="false" aria-controls="assistant-chat-container" aria-label="Abrir asistente del curso con IA">
+            <i class="fas fa-question"></i>
+            <span class="assistant-tooltip">Asistente IA</span>
+        </button>
+
+        <!-- Chat Window Container -->
+        <div id="assistant-chat-container" class="assistant-chat-container" aria-hidden="true" role="dialog" aria-label="Ventana del Asistente del Curso">
+            <div class="assistant-chat-header">
+                <div class="assistant-header-title">
+                    <i class="fas fa-robot"></i>
+                    <div>
+                        <h3>Asistente del Curso</h3>
+                        <span class="assistant-status">En línea y listo</span>
+                    </div>
+                </div>
+                <button id="assistant-close-btn" class="assistant-close-btn" aria-label="Cerrar asistente">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="assistant-chat-body">
+                <!-- Lazy loaded iframe for performance -->
+                <iframe
+                    id="assistant-iframe"
+                    data-src="https://www.chatbase.co/chatbot-iframe/52pRevz0yMrOkX47Jy8O-"
+                    width="100%"
+                    height="100%"
+                    frameborder="0"
+                    allow="microphone"
+                    title="Asistente de Inteligencia Artificial del Curso"
+                ></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

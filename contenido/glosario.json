@@ -1,0 +1,106 @@
+[
+   {
+      "definicion" : "Inteligencia Artificial: Campo de la informática dedicado a la creación de sistemas capaces de realizar tareas que normalmente requieren inteligencia humana.",
+      "termino" : "IA"
+   },
+   {
+      "definicion" : "Tipo de inteligencia artificial capaz de generar nuevo contenido (texto, imágenes, música, código) a partir de datos de entrenamiento y las instrucciones del usuario.",
+      "termino" : "IA generativa"
+   },
+   {
+      "definicion" : "Large Language Model (Modelo de Lenguaje Grande): Modelo de IA entrenado con grandes volúmenes de texto para comprender, resumir, traducir y generar texto coherente en lenguaje natural.",
+      "termino" : "LLM"
+   },
+   {
+      "definicion" : "Instrucción o texto de entrada que el usuario le da a un modelo de IA para indicarle qué tarea realizar y cómo estructurar la respuesta.",
+      "termino" : "prompt"
+   },
+   {
+      "definicion" : "Framework de prompting (Contexto, Instrucción, Formato, Restricciones, Conexión, Ejemplos) utilizado para estructurar instrucciones precisas para la IA.",
+      "termino" : "CIFRCE"
+   },
+   {
+      "definicion" : "Ciclo metodológico del programa de aprendizaje: Reto (exploración), Hacer (práctica principal), Entender (teoría y conceptos) y Compartir (colaboración).",
+      "termino" : "RHEC"
+   },
+   {
+      "definicion" : "Principio ético y metodológico que exige que un ser humano supervise, valide, corrija y apruebe las decisiones o contenidos generados por la IA antes de aplicarlos.",
+      "termino" : "Human-in-the-Loop"
+   },
+   {
+      "definicion" : "Autenticación de Dos Factores: Método de seguridad que requiere dos formas independientes de verificación para acceder a una cuenta digital.",
+      "termino" : "2FA"
+   },
+   {
+      "definicion" : "Interfaz de Programación de Aplicaciones: Conjunto de reglas y especificaciones que permite a diferentes aplicaciones comunicarse y compartir datos entre sí.",
+      "termino" : "API"
+   },
+   {
+      "definicion" : "Enfoque de desarrollo de software que permite crear aplicaciones, integraciones y automatizaciones mediante interfaces visuales, sin escribir código de programación.",
+      "termino" : "no-code"
+   },
+   {
+      "definicion" : "Plataforma visual de integración y automatización no-code que permite conectar múltiples aplicaciones y servicios web mediante flujos lógicos.",
+      "termino" : "Make"
+   },
+   {
+      "definicion" : "Herramienta de automatización de flujos de trabajo de código abierto y autoalojable, similar a Make.",
+      "termino" : "n8n"
+   },
+   {
+      "definicion" : "Disparador: Evento inicial que inicia la ejecución de un flujo de trabajo o automatización (ej. la recepción de un correo o un nuevo formulario).",
+      "termino" : "trigger"
+   },
+   {
+      "definicion" : "Mecanismo que permite a una aplicación enviar datos en tiempo real a otra tan pronto como ocurre un evento.",
+      "termino" : "webhook"
+   },
+   {
+      "definicion" : "Enrutador en Make o n8n: Módulo que permite bifurcar el flujo de trabajo en múltiples caminos basados en filtros y condiciones específicas.",
+      "termino" : "router"
+   },
+   {
+      "definicion" : "Customer Relationship Management: Software para gestionar todas las relaciones e interacciones de la empresa con sus clientes y clientes potenciales.",
+      "termino" : "CRM"
+   },
+   {
+      "definicion" : "Retorno de la Inversión: Medida financiera que evalúa el rendimiento o la utilidad de una inversión en comparación con su costo.",
+      "termino" : "ROI"
+   },
+   {
+      "definicion" : "Análisis preliminar de la viabilidad técnica, financiera y operativa de un proyecto antes de invertir recursos significativos.",
+      "termino" : "prefactibilidad"
+   },
+   {
+      "definicion" : "Proceso de modificar datos personales para eliminar cualquier información que identifique directamente a un individuo, asegurando su privacidad.",
+      "termino" : "anonimización"
+   },
+   {
+      "definicion" : "Información personal de especial protección legal (ej. salud, opiniones políticas, orientación sexual, ingresos detallados) que no debe ser expuesta ni compartida sin consentimiento expreso.",
+      "termino" : "dato sensible"
+   },
+   {
+      "definicion" : "Ley de Protección de la Persona frente al Tratamiento de sus Datos Personales en Costa Rica, orientada a proteger la autodeterminación informativa.",
+      "termino" : "Ley 8968"
+   },
+   {
+      "definicion" : "Modelo clásico de marketing que describe las 4 etapas por las que pasa un cliente: Atención, Interés, Deseo y Acción. Se usa para estructurar anuncios, correos y embudos de venta.",
+      "termino" : "AIDA"
+   },
+   {
+      "definicion" : "Kit de Marca: conjunto de elementos visuales y de comunicación de un negocio (paleta de colores, tipografías, logo y tono de voz) que se definen una vez y se reutilizan para mantener consistencia.",
+      "termino" : "Brand Kit"
+   },
+   {
+      "definicion" : "Funcion de Canva (en ingles 'Magic Design') que, a partir de una imagen o una idea, genera automaticamente propuestas de diseno editables para redes sociales y otros formatos.",
+      "termino" : "Diseño Mágico"
+   },
+   {
+      "definicion" : "Nivel de ventas en el que los ingresos igualan a los costos totales: a partir de ahi el negocio empieza a generar ganancia. Se calcula como Costos fijos / (Precio unitario - Costo variable unitario).",
+      "termino" : "punto de equilibrio"
+   },
+   {
+      "definicion" : "Proyeccion de las entradas y salidas de dinero de un negocio en un periodo, que permite ver si habra liquidez suficiente mes a mes.",
+      "termino" : "flujo de caja"
+   }
+]

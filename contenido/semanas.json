@@ -1,0 +1,291 @@
+[
+  {
+    "id": "s1",
+    "moduloId": "m1",
+    "semanaGlobal": 1,
+    "codigoAnterior": "Semana 1",
+    "titulo": "Configuración, Seguridad y Primer Contacto con la IA",
+    "objetivo": "Configurar su ecosistema de herramientas de IA (ChatGPT, Claude, Gemini) de forma segura bajo la Ley 8968 de Costa Rica y redactar el protocolo de uso de IA de su empresa.",
+    "entregable": "Protocolo de uso de IA de una página para el negocio y comparación crítica de dos respuestas con datos ficticios guardada en el portafolio.",
+    "tiempoEstimadoMin": 120,
+    "teoriaMin": 36,
+    "practicaMin": 84,
+    "nivelAsesoria": "A0 / A2",
+    "asesoriaCondicion": "A0 para simulación con datos ficticios. A2 obligatorio antes de ingresar datos personales de clientes, colaboradores o secretos comerciales reales.",
+    "infografias": [
+      "Infografias/Semana 1. Historia de la IA.png"
+    ],
+    "gptNombre": "Protocolo de Seguridad y LLMs",
+    "gptUrl": "https://chatgpt.com",
+    "gptDesc": "Espacio de trabajo seguro y lineamientos de privacidad bajo la Ley 8968 de Costa Rica.",
+    "disclaimer": {
+      "negocioNuevo": "Aprenda a iniciar su emprendimiento protegiendo su idea y configurando herramientas de IA con cero costo.",
+      "negocioEnMarcha": "Proteja la información confidencial de su clientela y estandarice el uso seguro de IA en su equipo de trabajo."
+    }
+  },
+  {
+    "id": "s2",
+    "moduloId": "m1",
+    "semanaGlobal": 2,
+    "codigoAnterior": "Semana 2",
+    "titulo": "Ingeniería de Prompts: El Modelo CIFRCE en Práctica",
+    "objetivo": "Dominar la técnica de formulación estructurada CIFRCE (Contexto, Instrucción, Formato, Restricciones y Criterios de Éxito) para obtener respuestas profesionales y reproducibles.",
+    "entregable": "Plantilla CIFRCE completa aplicada a una necesidad real de su negocio, comparando dos versiones y verificando la salida con rúbrica.",
+    "tiempoEstimadoMin": 120,
+    "teoriaMin": 36,
+    "practicaMin": 84,
+    "nivelAsesoria": "A0 / A1",
+    "asesoriaCondicion": "A0 en simulación. A1 si el resultado se convertirá en oferta comercial formal, términos de servicio o política de la empresa.",
+    "infografias": [
+      "Infografias/Semana 2. Guía Maestra de Prompt Engineering.png"
+    ],
+    "gptNombre": "Entrenador de Prompts CIFRCE",
+    "gptUrl": "https://chatgpt.com",
+    "gptDesc": "Estructura instrucciones paso a paso en las 5 capas para eliminar ambigüedades y alucinaciones.",
+    "disclaimer": {
+      "negocioNuevo": "Redacte instrucciones claras para investigar competidores y redactar propuestas iniciales sin perder tiempo.",
+      "negocioEnMarcha": "Estandarice las instrucciones de su negocio para generar cotizaciones, respuestas a reclamos y descripciones de catálogo."
+    }
+  },
+  {
+    "id": "s3",
+    "moduloId": "m1",
+    "semanaGlobal": 3,
+    "codigoAnterior": "Semana 3",
+    "titulo": "Diagnóstico Empresarial: FODA Dinámico y Perfil de Cliente",
+    "objetivo": "Realizar una radiografía honesta del negocio combinando un análisis FODA dinámico cruzado (TOWS) con un perfil de Buyer Persona contrastado con datos reales.",
+    "entregable": "Matriz FODA ponderada con las 3 prioridades críticas identificadas y perfil de cliente validado con al menos 3 personas reales.",
+    "tiempoEstimadoMin": 120,
+    "teoriaMin": 36,
+    "practicaMin": 84,
+    "nivelAsesoria": "A1 / A2",
+    "asesoriaCondicion": "A1 para validación de mercado. A2 antes de decisiones de crédito, endeudamiento o tratamiento de datos identificables.",
+    "infografias": [
+      "Infografias/Semana 3. Tendencias IA.png"
+    ],
+    "gptNombre": "Tu asesor empresarial crítico",
+    "gptUrl": "https://chatgpt.com/g/g-6a320a847428819185fe2b2787c50ded-tu-asesor-empresarial-critico",
+    "gptDesc": "Apoyo complementario para cuestionar supuestos; el FODA y perfil de cliente se trabajan con la plantilla del curso.",
+    "disclaimer": {
+      "negocioNuevo": "Identifique si su propuesta responde a un dolor real del cliente antes de gastar ahorros o solicitar préstamos.",
+      "negocioEnMarcha": "Descubra debilidades operativas ocultas y oportunidades de mercado frente a competidores en su cantón o sector."
+    }
+  },
+  {
+    "id": "s4",
+    "moduloId": "m1",
+    "semanaGlobal": 4,
+    "codigoAnterior": "Semana 4",
+    "titulo": "Plan de Acción Estratégico a 90 Días",
+    "objetivo": "Transformar los hallazgos del FODA y cliente en un Plan de Acción de 90 días ordenado por impacto y esfuerzo, con metas verificables.",
+    "entregable": "Plan de Acción a 90 Días priorizado (Matriz Impacto vs. Esfuerzo) con 3 a 5 iniciativas clave, responsables e indicadores de logro.",
+    "tiempoEstimadoMin": 120,
+    "teoriaMin": 36,
+    "practicaMin": 84,
+    "nivelAsesoria": "A1 / A2",
+    "asesoriaCondicion": "A1 revisión de viabilidad interna. A2 para obligaciones laborales o financieras relevantes.",
+    "infografias": [
+      "Infografias/Semana 4. Plan de Acción.png"
+    ],
+    "gptNombre": "Tu asesor empresarial crítico",
+    "gptUrl": "https://chatgpt.com/g/g-6a320a847428819185fe2b2787c50ded-tu-asesor-empresarial-critico",
+    "gptDesc": "Apoyo complementario para revisar decisiones; estructure el plan de 90 días con la plantilla del curso.",
+    "disclaimer": {
+      "negocioNuevo": "Fije los hitos concretos de validación, registro y apertura para los primeros tres meses.",
+      "negocioEnMarcha": "Enfoque la energía del equipo en las tareas que mueven la aguja de los ingresos y reducen costos operativos."
+    }
+  },
+  {
+    "id": "s5",
+    "moduloId": "m2",
+    "semanaGlobal": 5,
+    "codigoAnterior": "Semana 5",
+    "titulo": "Automatización Sin Código (No-Code) con Make / n8n",
+    "objetivo": "Mapear un proceso repetitivo del negocio y construir un prototipo de automatización conectando aplicaciones sin escribir código.",
+    "entregable": "Diagrama de flujo del proceso repetitivo y prototipo de automatización probado exitosamente con 3 casos de datos ficticios.",
+    "tiempoEstimadoMin": 120,
+    "teoriaMin": 36,
+    "practicaMin": 84,
+    "nivelAsesoria": "A0 / A2",
+    "asesoriaCondicion": "A0 en entorno de pruebas. A2 antes de conectar credenciales de producción o transferir datos reales de clientes.",
+    "infografias": [
+      "Infografias/Semana 5. Automatización de procesos .png"
+    ],
+    "gptNombre": "Diseñador de Flujos No-Code",
+    "gptUrl": "https://chatgpt.com",
+    "gptDesc": "Guía en el diseño de triggers, acciones y filtros en plataformas No-Code.",
+    "disclaimer": {
+      "negocioNuevo": "Diseñe procesos ordenados y automáticos desde el primer día para no saturarse cuando lleguen las primeras ventas.",
+      "negocioEnMarcha": "Elimine la digitación manual repetitiva entre formularios, correo y hojas de cálculo para ahorrar horas hombre."
+    }
+  },
+  {
+    "id": "s6",
+    "moduloId": "m2",
+    "semanaGlobal": 6,
+    "codigoAnterior": "Semana 6",
+    "titulo": "Chatbots y Asistentes Virtuales de Atención al Cliente",
+    "objetivo": "Diseñar y configurar un asistente virtual para responder preguntas frecuentes en WhatsApp Business o web con reglas de escalamiento humano.",
+    "entregable": "Guion estructurado para 10 consultas frecuentes, árbol de decisión y prueba documentada de transferencia a un agente humano.",
+    "tiempoEstimadoMin": 120,
+    "teoriaMin": 36,
+    "practicaMin": 84,
+    "nivelAsesoria": "A1 / A2",
+    "asesoriaCondicion": "A1 revisión de tono comercial y exactitud de precios. A2 antes de conectar el bot a una línea telefónica o cuenta activa de clientes.",
+    "infografias": [
+      "Infografias/Semana 6. Guía de Asistentes Virtuales Inteligentes.png"
+    ],
+    "gptNombre": "Asistente de Atención y Chatbots",
+    "gptUrl": "https://chatgpt.com",
+    "gptDesc": "Diseñe respuestas y derivación humana con el prompt y la plantilla de esta semana.",
+    "disclaimer": {
+      "negocioNuevo": "Ofrezca atención profesional inmediata las 24 horas sin necesidad de contratar personal en etapa temprana.",
+      "negocioEnMarcha": "Disminuya el tiempo de primera respuesta a consultas de WhatsApp y califique prospectos antes de atenderlos personalmente."
+    }
+  },
+  {
+    "id": "s7",
+    "moduloId": "m2",
+    "semanaGlobal": 7,
+    "codigoAnterior": "Semana 7",
+    "titulo": "Sistematización y CRM Básico Seguro",
+    "objetivo": "Estructurar una base de datos de clientes (CRM) en Google Sheets protegida con permisos y respaldos, bajo estándares de la Ley 8968.",
+    "entregable": "Plantilla de CRM en hoja de cálculo con campos mínimos, estados de cliente y protocolo de custodia de datos.",
+    "tiempoEstimadoMin": 120,
+    "teoriaMin": 36,
+    "practicaMin": 84,
+    "nivelAsesoria": "A0 / A2",
+    "asesoriaCondicion": "A0 para prototipo con datos de prueba. A2 obligatorio antes de migrar bases con cédulas, teléfonos o direcciones reales de clientes.",
+    "infografias": [
+      "Infografias/Semana 7. CRM y Automatización.png",
+      "Infografias/Semana 7. SandBox Regulatorios.png"
+    ],
+    "gptNombre": "Estructurador de CRM y Datos",
+    "gptUrl": "https://chatgpt.com",
+    "gptDesc": "Estructura tablas relacionales simples y asesora sobre controles de acceso y privacidad.",
+    "disclaimer": {
+      "negocioNuevo": "Cree su base de contactos con orden y consentimiento desde su primera prospección comercial.",
+      "negocioEnMarcha": "Deje de perder oportunidades comerciales unificando registros dispersos en WhatsApp, libretas y correos."
+    }
+  },
+  {
+    "id": "s8",
+    "moduloId": "m2",
+    "semanaGlobal": 8,
+    "codigoAnterior": "Semana 8",
+    "titulo": "Retorno de Inversión (ROI) de la Automatización",
+    "objetivo": "Calcular con fórmula transparente cuánto dinero y horas ahorra su empresa con las automatizaciones implementadas, evaluando costos de fallos y mantenimiento.",
+    "entregable": "Hoja de cálculo de ROI con supuestos visibles, horas ahorradas al mes, costos de herramientas y análisis de sensibilidad.",
+    "tiempoEstimadoMin": 120,
+    "teoriaMin": 36,
+    "practicaMin": 84,
+    "nivelAsesoria": "A1 / A2",
+    "asesoriaCondicion": "A1 revisión de costos internos. A2 antes de firmar contratos de software anuales o adquisiciones tecnológicas.",
+    "infografias": [
+      "Infografias/Semana 8. Valor de la automatización empresarial.png"
+    ],
+    "gptNombre": "Retorno de la Inversión por el uso de IA-PYMES",
+    "gptUrl": "https://chatgpt.com/g/g-6a31f723c5988191b8f00d377d4a43e4-retorno-de-la-inversion-por-el-uso-de-ia-pymes",
+    "gptDesc": "Apoya el análisis del retorno por uso de IA; compruebe supuestos y cálculos con la plantilla semanal.",
+    "disclaimer": {
+      "negocioNuevo": "Evite gastar en herramientas digitales innecesarias verificando si el ahorro justifica la complejidad.",
+      "negocioEnMarcha": "Demuestre con números claros a socios o gerencia el valor tangible de modernizar los procesos operativos."
+    }
+  },
+  {
+    "id": "s9",
+    "moduloId": "m3",
+    "semanaGlobal": 9,
+    "codigoAnterior": "Semana 9",
+    "titulo": "Identidad Visual y Diseño de Marca con IA (Canva)",
+    "objetivo": "Crear o actualizar la identidad visual del negocio (paleta de colores, tipografías, tono de voz) y producir piezas gráficas coherentes en Canva.",
+    "entregable": "Kit de Marca estructurado (colores hexadecimales, tipografías y tono de voz) y enlace a 3 piezas listas para publicación digital.",
+    "tiempoEstimadoMin": 120,
+    "teoriaMin": 36,
+    "practicaMin": 84,
+    "nivelAsesoria": "A1 / A2",
+    "asesoriaCondicion": "A1 revisión de consistencia gráfica. A2 si se utilizan logotipos, marcas ajenas o rostros de personas reales sin autorización.",
+    "infografias": [
+      "Infografias/Semana 9. Canva para PYMES.png"
+    ],
+    "gptNombre": "Asistente para tu Marketing Digital",
+    "gptUrl": "https://chatgpt.com/g/g-6a31f85ca4388191b71f421b7ade0f7b-asistente-para-tu-marketing-digital",
+    "gptDesc": "Apoyo para la comunicación comercial; desarrolle la identidad visual con la guía semanal.",
+    "disclaimer": {
+      "negocioNuevo": "Diseñe una imagen profesional atractiva desde el arranque sin costos elevados de agencias publicitarias.",
+      "negocioEnMarcha": "Renueve la presentación de sus productos y catálogos para transmitir mayor confianza y justificar mejores precios."
+    }
+  },
+  {
+    "id": "s10",
+    "moduloId": "m3",
+    "semanaGlobal": 10,
+    "codigoAnterior": "Semana 10",
+    "titulo": "Producción Audiovisual: Video, Locución y Avatares Éticos",
+    "objetivo": "Producir un video corto promocional con guion estructurado, subtítulos y locución asistida por IA respetando derechos de imagen y voz.",
+    "entregable": "Guion técnico estructurado (storyboard) con subtitulado y ficha de permisos de activos y locuciones sintéticas.",
+    "tiempoEstimadoMin": 120,
+    "teoriaMin": 36,
+    "practicaMin": 84,
+    "nivelAsesoria": "A1 / A2",
+    "asesoriaCondicion": "A1 revisión de claridad de mensaje. A2 obligatorio antes de clonar voz/imagen de terceros o publicar testimonios de clientes.",
+    "infografias": [
+      "Infografias/Semana 10. Creación Videos y avatares.png"
+    ],
+    "gptNombre": "Guionista Audiovisual y Locución",
+    "gptUrl": "https://chatgpt.com",
+    "gptDesc": "Genera guiones divididos en gancho (hook), problema, solución y llamado a la acción.",
+    "disclaimer": {
+      "negocioNuevo": "Pierda el miedo a la cámara apoyándose en herramientas audiovisuales accesibles para mostrar su producto.",
+      "negocioEnMarcha": "Produzca testimonios, videos explicativos y tutoriales de producto con calidad constante para sus redes."
+    }
+  },
+  {
+    "id": "s11",
+    "moduloId": "m3",
+    "semanaGlobal": 11,
+    "codigoAnterior": "Semana 11",
+    "titulo": "Prefactibilidad y Análisis Financiero de Inversión",
+    "objetivo": "Evaluar con asistencia crítica de IA la viabilidad de un nuevo producto, servicio o compra de equipo calculando el punto de equilibrio en colones.",
+    "entregable": "Ficha de prefactibilidad con punto de equilibrio, costos fijos y variables detallados y tres escenarios (conservador, base, optimista).",
+    "tiempoEstimadoMin": 120,
+    "teoriaMin": 36,
+    "practicaMin": 84,
+    "nivelAsesoria": "A2",
+    "asesoriaCondicion": "A2 Obligatorio: toda cifra de prefactibilidad debe ser contrastada con facturas reales y criterio contable antes de comprometer fondos.",
+    "infografias": [
+      "Infografias/Semana 11. Guía de Viabilidad de IA.png"
+    ],
+    "gptNombre": "Ayudante para Costeo de productos para PYMES",
+    "gptUrl": "https://chatgpt.com/g/g-6a31f7e1774c8191bbfe509c66859c1f-ayudante-para-costeo-de-productos-para-pymes",
+    "gptDesc": "Apoya el costeo de productos; la prefactibilidad completa exige la plantilla y revisión humana.",
+    "disclaimer": {
+      "negocioNuevo": "Conozca cuántas unidades exactas debe vender al mes antes de alquilar un local o comprar inventario.",
+      "negocioEnMarcha": "Evalúe si abrir una nueva sucursal o adquirir maquinaria es rentable o si comprometerá el flujo de caja actual."
+    }
+  },
+  {
+    "id": "s12",
+    "moduloId": "m3",
+    "semanaGlobal": 12,
+    "codigoAnterior": "Semana 12",
+    "titulo": "Campaña de Lanzamiento Integral (Modelo AIDA)",
+    "objetivo": "Integrar todos los productos del programa en una campaña comercial de 4 semanas estructurada bajo el embudo AIDA (Atención, Interés, Deseo, Acción).",
+    "entregable": "Plan de campaña de 4 semanas completo con piezas creativas, calendario de publicación, presupuesto de pauta e indicadores clave de conversión.",
+    "tiempoEstimadoMin": 120,
+    "teoriaMin": 36,
+    "practicaMin": 84,
+    "nivelAsesoria": "A1 / A2",
+    "asesoriaCondicion": "A1 revisión del mensaje y propuesta comercial. A2 antes de invertir presupuesto en pauta digital o campañas masivas de mensajería.",
+    "infografias": [
+      "Infografias/Semana 12. Estrategia IA para Pequeños Empresarios.png"
+    ],
+    "gptNombre": "Estratega de Campaña AIDA",
+    "gptUrl": "https://chatgpt.com",
+    "gptDesc": "Calendariza y redacta los copies de lanzamiento integrando el embudo de ventas completo.",
+    "disclaimer": {
+      "negocioNuevo": "Ejecute su lanzamiento comercial formal al mercado con orden, activos profesionales y metas medibles.",
+      "negocioEnMarcha": "Lance promociones estacionales o nuevas líneas de producto con una campaña articulada que maximice la conversión."
+    }
+  }
+]

@@ -1,0 +1,60 @@
+{
+  "titulo": "Autodiagnóstico de Madurez y Entrada MiPYME IA",
+  "descripcion": "Responda a estas 4 preguntas clave para recomendarle la ruta de aprendizaje óptima dentro del programa.",
+  "preguntas": [
+    {
+      "id": "p1",
+      "pregunta": "¿En qué etapa se encuentra actualmente su iniciativa o negocio?",
+      "opciones": [
+        {
+          "texto": "Tengo una idea o proyecto que aún no ha iniciado ventas ni operaciones formales.",
+          "puntaje_ruta": "toolkit1"
+        },
+        {
+          "texto": "Ya estoy operando y vendiendo, pero necesito estructurar mejor mis ventas y clientes.",
+          "puntaje_ruta": "moduloA"
+        },
+        {
+          "texto": "Tengo un negocio establecido con ventas constantes y busco optimizar procesos o finanzas.",
+          "puntaje_ruta": "moduloBC"
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "pregunta": "¿Cuál es su nivel de experiencia utilizando herramientas de Inteligencia Artificial (ej. ChatGPT, Claude, Gemini)?",
+      "opciones": [
+        {
+          "texto": "Nunca las he utilizado o solo he hecho pruebas muy básicas.",
+          "nivel_ia": "principiante"
+        },
+        {
+          "texto": "Las uso ocasionalmente para redactar textos o buscar ideas.",
+          "nivel_ia": "intermedio"
+        },
+        {
+          "texto": "Las uso semanalmente en mi negocio con prompts estructurados.",
+          "nivel_ia": "avanzado"
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "pregunta": "¿Cuál es el principal reto de su negocio hoy?",
+      "opciones": [
+        {
+          "texto": "Validar si existe suficiente mercado antes de invertir dinero.",
+          "foco": "validacion"
+        },
+        {
+          "texto": "Aumentar las ventas y organizar la comunicación en WhatsApp/Redes.",
+          "foco": "ventas"
+        },
+        {
+          "texto": "Organizar costos, precios y punto de equilibrio para saber si gano dinero.",
+          "foco": "finanzas"
+        }
+      ]
+    }
+  ]
+}
